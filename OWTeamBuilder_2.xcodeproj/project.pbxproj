@@ -13,6 +13,14 @@
 		FA75D27024BA302B004F5F9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA75D26F24BA302B004F5F9F /* Preview Assets.xcassets */; };
 		FA75D27B24BA302C004F5F9F /* OWTeamBuilder_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D27A24BA302C004F5F9F /* OWTeamBuilder_2Tests.swift */; };
 		FA75D28624BA302C004F5F9F /* OWTeamBuilder_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D28524BA302C004F5F9F /* OWTeamBuilder_2UITests.swift */; };
+		FA75D29724BA3731004F5F9F /* HeroPortraitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D29624BA3731004F5F9F /* HeroPortraitView.swift */; };
+		FA75D29C24BA374E004F5F9F /* HeroSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D29824BA374B004F5F9F /* HeroSelectorView.swift */; };
+		FA75D29D24BA374E004F5F9F /* HeroPortraitViewMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D29924BA374C004F5F9F /* HeroPortraitViewMask.swift */; };
+		FA75D29E24BA374E004F5F9F /* SelectableHeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D29A24BA374D004F5F9F /* SelectableHeroView.swift */; };
+		FA75D29F24BA374E004F5F9F /* HeroScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D29B24BA374D004F5F9F /* HeroScrollView.swift */; };
+		FA75D2A124BA375D004F5F9F /* OWHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A024BA375D004F5F9F /* OWHero.swift */; };
+		FA75D2A324BA3766004F5F9F /* OWHeroFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A224BA3766004F5F9F /* OWHeroFactory.swift */; };
+		FA75D2A524BA48A0004F5F9F /* TeamComposingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +53,14 @@
 		FA75D28124BA302C004F5F9F /* OWTeamBuilder_2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OWTeamBuilder_2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA75D28524BA302C004F5F9F /* OWTeamBuilder_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWTeamBuilder_2UITests.swift; sourceTree = "<group>"; };
 		FA75D28724BA302C004F5F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA75D29624BA3731004F5F9F /* HeroPortraitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroPortraitView.swift; sourceTree = "<group>"; };
+		FA75D29824BA374B004F5F9F /* HeroSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroSelectorView.swift; sourceTree = "<group>"; };
+		FA75D29924BA374C004F5F9F /* HeroPortraitViewMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroPortraitViewMask.swift; sourceTree = "<group>"; };
+		FA75D29A24BA374D004F5F9F /* SelectableHeroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableHeroView.swift; sourceTree = "<group>"; };
+		FA75D29B24BA374D004F5F9F /* HeroScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroScrollView.swift; sourceTree = "<group>"; };
+		FA75D2A024BA375D004F5F9F /* OWHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWHero.swift; sourceTree = "<group>"; };
+		FA75D2A224BA3766004F5F9F /* OWHeroFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWHeroFactory.swift; sourceTree = "<group>"; };
+		FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamComposingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +113,10 @@
 			children = (
 				FA75D26824BA3029004F5F9F /* OWTeamBuilder_2App.swift */,
 				FA75D26A24BA3029004F5F9F /* ContentView.swift */,
+				FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */,
+				FA75D29424BA3693004F5F9F /* Model */,
+				FA75D29324BA3689004F5F9F /* View */,
+				FA75D29524BA36DB004F5F9F /* Extra */,
 				FA75D26C24BA302B004F5F9F /* Assets.xcassets */,
 				FA75D27124BA302B004F5F9F /* Info.plist */,
 				FA75D26E24BA302B004F5F9F /* Preview Content */,
@@ -128,6 +148,34 @@
 				FA75D28724BA302C004F5F9F /* Info.plist */,
 			);
 			path = OWTeamBuilder_2UITests;
+			sourceTree = "<group>";
+		};
+		FA75D29324BA3689004F5F9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA75D29B24BA374D004F5F9F /* HeroScrollView.swift */,
+				FA75D29824BA374B004F5F9F /* HeroSelectorView.swift */,
+				FA75D29A24BA374D004F5F9F /* SelectableHeroView.swift */,
+				FA75D29624BA3731004F5F9F /* HeroPortraitView.swift */,
+				FA75D29924BA374C004F5F9F /* HeroPortraitViewMask.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA75D29424BA3693004F5F9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA75D2A024BA375D004F5F9F /* OWHero.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA75D29524BA36DB004F5F9F /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				FA75D2A224BA3766004F5F9F /* OWHeroFactory.swift */,
+			);
+			path = Extra;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +307,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA75D29724BA3731004F5F9F /* HeroPortraitView.swift in Sources */,
 				FA75D26B24BA3029004F5F9F /* ContentView.swift in Sources */,
+				FA75D29E24BA374E004F5F9F /* SelectableHeroView.swift in Sources */,
+				FA75D2A124BA375D004F5F9F /* OWHero.swift in Sources */,
+				FA75D29D24BA374E004F5F9F /* HeroPortraitViewMask.swift in Sources */,
+				FA75D2A524BA48A0004F5F9F /* TeamComposingView.swift in Sources */,
+				FA75D29F24BA374E004F5F9F /* HeroScrollView.swift in Sources */,
+				FA75D2A324BA3766004F5F9F /* OWHeroFactory.swift in Sources */,
 				FA75D26924BA3029004F5F9F /* OWTeamBuilder_2App.swift in Sources */,
+				FA75D29C24BA374E004F5F9F /* HeroSelectorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
