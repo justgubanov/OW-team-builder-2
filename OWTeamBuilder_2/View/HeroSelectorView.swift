@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-protocol HeroSelectorViewDelegate {
-    
-    func heroSelectorViewReturnsSelectedHero(with id: String)
-}
-
 struct HeroSelectorView: View {
     
     enum GroupCriteria {
@@ -33,17 +28,10 @@ struct HeroSelectorView: View {
     }
     
     @Environment(\.presentationMode) var presentation
+    @Binding var selectedHero: OWHero?
     
     var heroes: [OWHero]
-    var groupCriteria: GroupCriteria
-    
-    var delegate: HeroSelectorViewDelegate?
-    
-    init(heroes: [OWHero], groupBy criteria: GroupCriteria = .byQueueRole, delegate: HeroSelectorViewDelegate? = nil) {
-        self.heroes = heroes
-        self.groupCriteria = criteria
-        self.delegate = delegate
-    }
+    var groupingCriteria = GroupCriteria.byQueueRole
     
     var body: some View {
         VStack(spacing: 40) {
@@ -54,17 +42,23 @@ struct HeroSelectorView: View {
                         Spacer()
                     }
                     
-                    HeroScrollView(heroes: collection.characters, delegate: self)
+                    HeroScrollView(selectedHero: $selectedHero, avaliableHeroes: collection.characters)
                 }
                 .padding(.horizontal, 8)
             }
         }
         .padding(.vertical, 20)
+        
+        // TODO: Fix guard condition
+        .onChange(of: $selectedHero.wrappedValue) { [selectedHero] newValue in
+            guard selectedHero != nil else { return }
+            presentation.wrappedValue.dismiss()
+        }
     }
     
     private var collections: [Collection] {
         var collections = [Collection]()
-        for tag in groupCriteria.values {
+        for tag in groupingCriteria.values {
             let selectedHeroes = heroes.filter { hero in
                 hero.tags.contains(tag)
             }
@@ -75,16 +69,8 @@ struct HeroSelectorView: View {
     }
 }
 
-extension HeroSelectorView: HeroScrollViewDelegate {
-    
-    func heroScrollViewDidSelectHero(id: String) {
-        delegate?.heroSelectorViewReturnsSelectedHero(with: id)
-        presentation.wrappedValue.dismiss()
-    }
-}
-
 struct HeroSelectorView_Previews: PreviewProvider {
     static var previews: some View {
-        HeroSelectorView(heroes: OWHeroFactory().getHeroes())
+        HeroSelectorView(selectedHero: .constant(nil), heroes: OWHeroFactory().getHeroes())
     }
 }

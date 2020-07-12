@@ -10,6 +10,7 @@ import SwiftUI
 struct TeamComposingView: View {
     
     private var heroes = OWHeroFactory().getHeroes()
+    @State var selectedHeroes: [OWHero?] = [nil, nil, nil, nil, nil, nil]
     
     var body: some View {
         VStack {
@@ -19,18 +20,11 @@ struct TeamComposingView: View {
             }
             
             HStack {
-                ForEach(1...6, id: \.self) { _ in
-                    SelectableHeroView(avaliableHeroes: heroes, delegate: self)
+                ForEach(0...5, id: \.self) { index in
+                    SelectableHeroView(selectedHero: $selectedHeroes[index], avaliableHeroes: heroes)
                 }
             }
         }
-    }
-}
-
-extension TeamComposingView: SelectableHeroViewDelegate {
-    
-    func view(_ view: SelectableHeroView, didSetHeroTo hero: OWHero?) {
-        print(String(describing: hero?.name))
     }
 }
 
