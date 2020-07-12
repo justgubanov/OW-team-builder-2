@@ -50,10 +50,10 @@ struct HeroSelectorView: View {
             ForEach(collections, id: \.self) { collection in
                 VStack {
                     HStack {
-                        Text(collection.name)
-                            .bold()
+                        Text(collection.name).bold()
                         Spacer()
                     }
+                    
                     HeroScrollView(heroes: collection.characters, delegate: self)
                 }
                 .padding(.horizontal, 8)
@@ -79,7 +79,7 @@ extension HeroSelectorView: HeroScrollViewDelegate {
     
     func heroScrollViewDidSelectHero(id: String) {
         delegate?.heroSelectorViewReturnsSelectedHero(with: id)
-        self.presentation.wrappedValue.dismiss()
+        presentation.wrappedValue.dismiss()
     }
 }
 

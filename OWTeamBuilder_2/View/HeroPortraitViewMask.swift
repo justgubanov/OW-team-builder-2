@@ -32,5 +32,6 @@ struct HeroPortraitViewMask: Shape {
 struct HeroPortraitViewMask_Previews: PreviewProvider {
     static var previews: some View {
         HeroPortraitViewMask()
+            .previewLayout(.fixed(width: 200, height: 200))
     }
 }

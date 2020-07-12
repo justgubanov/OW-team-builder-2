@@ -15,7 +15,7 @@ protocol SelectableHeroViewDelegate {
 struct SelectableHeroView: View, Identifiable {
     
     @State private var showModal = false
-    @State private var selectedHero: OWHero? {
+    @State var selectedHero: OWHero? {
         didSet {
             delegate?.view(self, didSetHeroTo: selectedHero)
         }
@@ -26,25 +26,25 @@ struct SelectableHeroView: View, Identifiable {
     var delegate: SelectableHeroViewDelegate?
     
     var body: some View {
-        ZStack {
-            HeroPortraitView(heroPortrait: #imageLiteral(resourceName: "heroPortrait-background"))
-            Text("+")
-                .bold()
-                .foregroundColor(.black)
-            if let selectedHero = selectedHero {
-                HeroPortraitView(heroPortrait: selectedHero.portrait)
+        ZStack {            
+            HeroPortraitView(heroPortrait: selectedHero?.portrait)
+            
+            if selectedHero == nil {
+                Text("+")
+                    .bold()
+                    .foregroundColor(.black)
             }
-//            selectedHero.map {
-//                HeroPortraitView(heroPortrait: $0.portrait)
-//            }
         }
+        
         .onTapGesture(count: 2) {
             self.selectedHero = nil
             self.delegate?.view(self, didSetHeroTo: nil)
         }
+        
         .onTapGesture {
             self.showModal = true
         }
+        
         .sheet(isPresented: $showModal) {
             HeroSelectorView(heroes: self.avaliableHeroes, delegate: self)
         }
@@ -61,6 +61,13 @@ extension SelectableHeroView: HeroSelectorViewDelegate {
 
 struct SelectableHeroView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectableHeroView(avaliableHeroes: OWHeroFactory().getHeroes())
+        Group {
+            SelectableHeroView(avaliableHeroes: OWHeroFactory().getHeroes())
+            
+            SelectableHeroView(
+                selectedHero: OWHeroFactory().makeHero(id: "mei"),
+                avaliableHeroes: OWHeroFactory().getHeroes())
+        }
+        .previewLayout(.sizeThatFits)
     }
 }

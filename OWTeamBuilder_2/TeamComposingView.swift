@@ -17,6 +17,7 @@ struct TeamComposingView: View {
                 Text("Select your heroes:")
                 Spacer()
             }
+            
             HStack {
                 ForEach(1...6, id: \.self) { _ in
                     SelectableHeroView(avaliableHeroes: heroes, delegate: self)
