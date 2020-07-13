@@ -10,7 +10,7 @@ import SwiftUI
 struct HeroPortraitBackground: View {
     
     private let gradient = Gradient(
-        colors: [Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)), Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)), Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))]
+        colors: [Color(#colorLiteral(red: 0.8260970712, green: 0.8753399253, blue: 0.9298245311, alpha: 1)), Color(#colorLiteral(red: 0.8284774423, green: 0.8904280066, blue: 0.9489288926, alpha: 1)), Color(#colorLiteral(red: 0.6798356175, green: 0.8405920863, blue: 0.9413492084, alpha: 1))]
     )
     
     var body: some View {

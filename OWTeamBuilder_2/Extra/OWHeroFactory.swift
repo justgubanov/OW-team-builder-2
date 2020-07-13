@@ -10,13 +10,13 @@ import Foundation
 struct OWHeroFactory {
     
     private static let heroes: [OWHero] = [
-        .init(portrait: #imageLiteral(resourceName: "heroPortrait-raehard"), name: "Raenhard", tags: .tank, idString: "raenhard"),
-        .init(portrait: #imageLiteral(resourceName: "heroPortrait-winston"), name: "Winston", tags: .tank, idString: "winston"),
-        .init(portrait: #imageLiteral(resourceName: "heroPortrait-tracer"), name: "Tracer", tags: .damagedealler, idString: "tracer"),
-        .init(portrait: #imageLiteral(resourceName: "heroPortrait-mei"), name: "Mei", tags: .damagedealler, idString: "mei"),
-        .init(portrait: #imageLiteral(resourceName: "heroPortrait-genji"), name: "Genji", tags: .damagedealler, idString: "genji"),
-        .init(portrait: #imageLiteral(resourceName: "heroPortrait-mercy"), name: "Mercy", tags: .healler, idString: "mercy"),
-        .init(portrait: #imageLiteral(resourceName: "heroPortrait-lucio"), name: "Lucio", tags: .healler, idString: "lucio")
+        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Raenhard"), name: "Raenhard", tags: .tank, idString: "raenhard"),
+        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Winston"), name: "Winston", tags: .tank, idString: "winston"),
+        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Tracer"), name: "Tracer", tags: .damagedealler, idString: "tracer"),
+        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Mei"), name: "Mei", tags: .damagedealler, idString: "mei"),
+        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Genji"), name: "Genji", tags: .damagedealler, idString: "genji"),
+        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Mercy"), name: "Mercy", tags: .healler, idString: "mercy"),
+        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Lucio"), name: "Lucio", tags: .healler, idString: "lucio")
     ]
     
     func getHeroes() -> [OWHero] {

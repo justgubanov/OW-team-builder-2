@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HeroPortraitView: View {
     
-    private let portraitAspect: CGFloat = 1.2
+    private let portraitAspect: CGFloat = 0.8
     
     var heroPortrait: UIImage?
     
@@ -21,7 +21,7 @@ struct HeroPortraitView: View {
                 GeometryReader { geometry in
                     Image(uiImage: heroPortrait)
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .aspectRatio(contentMode: .fill)
                         .frame(width: geometry.size.width)
                 }
             }
@@ -34,7 +34,7 @@ struct HeroPortraitView: View {
 struct HeroPortraitView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HeroPortraitView(heroPortrait: #imageLiteral(resourceName: "heroPortrait-tracer"))
+            HeroPortraitView(heroPortrait: #imageLiteral(resourceName: "heroPortrait_Tracer"))
             HeroPortraitView(heroPortrait: nil)
         }
         .previewLayout(.sizeThatFits)
