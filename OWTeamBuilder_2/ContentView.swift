@@ -10,7 +10,16 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         HStack {
-            TeamComposingView()
+            NavigationView {
+                Form {
+                    TeamComposingView(title: "Enemy team")
+                        .padding(.all, 10)
+                    
+                    TeamComposingView(title: "Your team")
+                        .padding(.all, 10)
+                }
+                .navigationTitle(Text("Team composer"))
+            }
         }
     }
 }

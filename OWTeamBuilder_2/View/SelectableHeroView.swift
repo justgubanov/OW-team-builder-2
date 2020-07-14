@@ -30,7 +30,9 @@ struct SelectableHeroView: View, Identifiable {
         }
         
         .onTapGesture(count: 2) {
-            selectedHero = nil
+            withAnimation(.spring()) {
+                selectedHero = nil
+            }
         }
         
         .onTapGesture {

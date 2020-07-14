@@ -9,27 +9,47 @@ import SwiftUI
 
 struct TeamComposingView: View {
     
-    private var heroes = OWHeroFactory().getHeroes()
-    @State var selectedHeroes: [OWHero?] = [nil, nil, nil, nil, nil, nil]
+    @State private var selectedHeroes = Array<OWHero?>(repeating: nil, count: 6)
+    
+    var avaliableHeroes = OWHeroFactory().getHeroes()
+    var title: String
     
     var body: some View {
         VStack {
             HStack {
-                Text("Select your heroes:")
+                Text(title)
+                    .bold()
                 Spacer()
             }
             
-            HStack {
+            HStack (spacing: -13) {
                 ForEach(0...5, id: \.self) { index in
-                    SelectableHeroView(selectedHero: $selectedHeroes[index], avaliableHeroes: heroes)
+                    SelectableHeroView(selectedHero: $selectedHeroes[index], avaliableHeroes: avaliableHeroes)
                 }
             }
+        }
+        .contextMenu {
+            if selectedHeroes.contains( where: { $0 != nil }) {
+                Button(action: clearHeroes) {
+                    HStack {
+                        Text("Clear")
+                        Image(systemName: "trash.fill")
+                    }
+                }
+            }
+        }
+    }
+    
+    private func clearHeroes() {
+        withAnimation(.spring()) {
+            selectedHeroes = Array<OWHero?>(repeating: nil, count: 6)
         }
     }
 }
 
 struct TeamComposingView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamComposingView()
+        TeamComposingView(title: "Your team")
+            .previewLayout(.sizeThatFits)
     }
 }
