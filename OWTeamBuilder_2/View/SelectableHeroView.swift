@@ -9,58 +9,46 @@ import SwiftUI
 
 struct SelectableHeroView: View, Identifiable {
 
-    @State private var showModal = false
-    @Binding var selectedHero: OWHero?
+    @Binding var hero: OWHero?
     
-    // TODO: Remove later
-    @State private var rememberedHeroIdString: String?
+    @EnvironmentObject var session: MatchSession
     
     private(set) var id = UUID()
-    var avaliableHeroes: [OWHero]
+    
+    private var hasHero: Bool {
+        hero != nil
+    }
+    
+    @State var isSelected: Bool = false
     
     var body: some View {
-        ZStack {            
-            HeroPortraitView(heroPortrait: selectedHero?.portrait)
+        ZStack {
+            HeroPortraitView(heroPortrait: hero?.portrait, isSelected: isSelected)
             
-            if selectedHero == nil {
+            if !hasHero {
                 Text("+")
                     .bold()
                     .foregroundColor(.black)
             }
         }
-        
         .onTapGesture(count: 2) {
-            withAnimation(.spring()) {
-                selectedHero = nil
+            withAnimation(.easeOut) {
+                hero = nil
             }
+            session.focusedHeroView = nil
         }
-        
         .onTapGesture {
-            rememberedHeroIdString = selectedHero?.idString
-            selectedHero = nil
-            showModal = true
+            isSelected = true
+            session.focusedHeroView = self
         }
-        
-        .sheet(isPresented: $showModal, onDismiss: onSheetDismiss) {
-            HeroSelectorView(selectedHero: $selectedHero,
-                             heroes: avaliableHeroes)
-        }
-    }
-    
-    private func onSheetDismiss() {
-        guard selectedHero == nil, let rememberedHeroIdString = rememberedHeroIdString else { return }
-        selectedHero = OWHeroFactory().makeHero(id: rememberedHeroIdString)
     }
 }
 
 struct SelectableHeroView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            SelectableHeroView(selectedHero: .constant(nil), avaliableHeroes: OWHeroFactory().getHeroes())
-            
-            SelectableHeroView(
-                selectedHero: .constant(OWHeroFactory().makeHero(id: "mei")),
-                avaliableHeroes: OWHeroFactory().getHeroes())
+            SelectableHeroView(hero: .constant(nil))
+            SelectableHeroView(hero: .constant(OWHeroFactory().makeHero(id: "mei")))
         }
         .previewLayout(.sizeThatFits)
     }

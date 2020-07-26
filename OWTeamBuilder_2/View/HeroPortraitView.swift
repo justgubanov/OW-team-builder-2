@@ -12,10 +12,15 @@ struct HeroPortraitView: View {
     private let portraitAspect: CGFloat = 0.8
     
     var heroPortrait: UIImage?
+    var isSelected: Bool = false
     
     var body: some View {
         ZStack {
             HeroPortraitBackground()
+            
+            if isSelected {
+                Color(#colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1))
+            }
             
             if let heroPortrait = heroPortrait {
                 GeometryReader { geometry in

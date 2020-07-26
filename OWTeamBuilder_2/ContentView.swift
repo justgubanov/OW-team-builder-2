@@ -8,24 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var session = MatchSession()
+    
     var body: some View {
         HStack {
-            NavigationView {
-                Form {
-                    TeamComposingView(title: "Enemy team")
+            ZStack {
+                
+                NavigationView {
+                    Form {
+                        Group {
+                            TeamComposingView(title: "Enemy team")
+                            TeamComposingView(title: "Your team")
+                        }
                         .padding(.all, 10)
-                    
-                    TeamComposingView(title: "Your team")
-                        .padding(.all, 10)
+                    }
+                    .navigationTitle(Text("Match composer"))
                 }
-                .navigationTitle(Text("Team composer"))
+                
+                HeroPickerCard()
             }
         }
+        .environmentObject(session)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+//            .preferredColorScheme(.dark)
     }
 }

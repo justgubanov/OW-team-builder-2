@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HeroSelectorView: View {
+struct HeroPicker: View {
     
     enum GroupCriteria {
         
@@ -26,11 +26,8 @@ struct HeroSelectorView: View {
         var name: String
         var characters: [OWHero]
     }
-    
-    @Environment(\.presentationMode) var presentation
-    @Binding var selectedHero: OWHero?
-    
-    var heroes: [OWHero]
+        
+    var heroesToSelectFrom: [OWHero]
     var groupingCriteria = GroupCriteria.byQueueRole
     
     var body: some View {
@@ -42,24 +39,18 @@ struct HeroSelectorView: View {
                         Spacer()
                     }
                     
-                    HeroScrollView(selectedHero: $selectedHero, avaliableHeroes: collection.characters)
+                    HeroScrollView(avaliableHeroes: collection.characters)
                 }
                 .padding(.horizontal, 8)
             }
         }
         .padding(.vertical, 20)
-        
-        // TODO: Fix guard condition
-        .onChange(of: $selectedHero.wrappedValue) { [selectedHero] newValue in
-            guard selectedHero != nil else { return }
-            presentation.wrappedValue.dismiss()
-        }
     }
     
     private var collections: [Collection] {
         var collections = [Collection]()
         for tag in groupingCriteria.values {
-            let selectedHeroes = heroes.filter { hero in
+            let selectedHeroes = heroesToSelectFrom.filter { hero in
                 hero.tags.contains(tag)
             }
             let newCollection = Collection(name: tag.displayableName, characters: selectedHeroes)
@@ -69,8 +60,8 @@ struct HeroSelectorView: View {
     }
 }
 
-struct HeroSelectorView_Previews: PreviewProvider {
+struct HeroPicker_Previews: PreviewProvider {
     static var previews: some View {
-        HeroSelectorView(selectedHero: .constant(nil), heroes: OWHeroFactory().getHeroes())
+        HeroPicker(heroesToSelectFrom: OWHeroFactory().getHeroes())
     }
 }

@@ -11,7 +11,12 @@ struct TeamComposingView: View {
     
     @State private var selectedHeroes = Array<OWHero?>(repeating: nil, count: 6)
     
-    var avaliableHeroes = OWHeroFactory().getHeroes()
+    private var isTeamPopulated: Bool {
+        selectedHeroes.contains { hero in
+            hero != nil
+        }
+    }
+    
     var title: String
     
     var body: some View {
@@ -24,12 +29,12 @@ struct TeamComposingView: View {
             
             HStack (spacing: -13) {
                 ForEach(0...5, id: \.self) { index in
-                    SelectableHeroView(selectedHero: $selectedHeroes[index], avaliableHeroes: avaliableHeroes)
+                    SelectableHeroView(hero: $selectedHeroes[index])
                 }
             }
         }
         .contextMenu {
-            if selectedHeroes.contains( where: { $0 != nil }) {
+            if isTeamPopulated {
                 Button(action: clearHeroes) {
                     HStack {
                         Text("Clear")
