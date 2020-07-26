@@ -21,6 +21,7 @@
 		FA75D2A324BA3766004F5F9F /* OWHeroFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A224BA3766004F5F9F /* OWHeroFactory.swift */; };
 		FA75D2A524BA48A0004F5F9F /* TeamComposingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */; };
 		FA75D2A724BA5192004F5F9F /* HeroPortraitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A624BA5192004F5F9F /* HeroPortraitView.swift */; };
+		FABD7F8124CDED9900B6029A /* HeroSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD7F8024CDED9900B6029A /* HeroSpot.swift */; };
 		FAF3387124C4D230007BAA9B /* MatchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3387024C4D22F007BAA9B /* MatchSession.swift */; };
 		FAF3387324C4EB0A007BAA9B /* HeroPickerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */; };
 		FAFE8F5524BB5EE800B5ADB2 /* HeroPortraitBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE8F5424BB5EE800B5ADB2 /* HeroPortraitBackground.swift */; };
@@ -64,6 +65,7 @@
 		FA75D2A224BA3766004F5F9F /* OWHeroFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWHeroFactory.swift; sourceTree = "<group>"; };
 		FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamComposingView.swift; sourceTree = "<group>"; };
 		FA75D2A624BA5192004F5F9F /* HeroPortraitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPortraitView.swift; sourceTree = "<group>"; };
+		FABD7F8024CDED9900B6029A /* HeroSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroSpot.swift; sourceTree = "<group>"; };
 		FAF3387024C4D22F007BAA9B /* MatchSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSession.swift; sourceTree = "<group>"; };
 		FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCard.swift; sourceTree = "<group>"; };
 		FAFE8F5424BB5EE800B5ADB2 /* HeroPortraitBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPortraitBackground.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				FA75D2A024BA375D004F5F9F /* OWHero.swift */,
+				FABD7F8024CDED9900B6029A /* HeroSpot.swift */,
 				FAF3387024C4D22F007BAA9B /* MatchSession.swift */,
 			);
 			path = Model;
@@ -326,6 +329,7 @@
 				FA75D29F24BA374E004F5F9F /* HeroScrollView.swift in Sources */,
 				FA75D2A324BA3766004F5F9F /* OWHeroFactory.swift in Sources */,
 				FAFE8F5524BB5EE800B5ADB2 /* HeroPortraitBackground.swift in Sources */,
+				FABD7F8124CDED9900B6029A /* HeroSpot.swift in Sources */,
 				FAF3387124C4D230007BAA9B /* MatchSession.swift in Sources */,
 				FA75D26924BA3029004F5F9F /* OWTeamBuilder_2App.swift in Sources */,
 				FA75D29C24BA374E004F5F9F /* HeroPicker.swift in Sources */,

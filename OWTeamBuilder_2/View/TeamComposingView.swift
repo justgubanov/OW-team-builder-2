@@ -9,11 +9,11 @@ import SwiftUI
 
 struct TeamComposingView: View {
     
-    @State private var selectedHeroes = Array<OWHero?>(repeating: nil, count: 6)
+    @State private var selectedHeroes = Self.makeNewSpots()
     
     private var isTeamPopulated: Bool {
-        selectedHeroes.contains { hero in
-            hero != nil
+        selectedHeroes.contains { spot in
+            spot.hero != nil
         }
     }
     
@@ -29,7 +29,7 @@ struct TeamComposingView: View {
             
             HStack (spacing: -13) {
                 ForEach(0...5, id: \.self) { index in
-                    SelectableHeroView(hero: $selectedHeroes[index])
+                    SelectableHeroView(heroSpot: $selectedHeroes[index])
                 }
             }
         }
@@ -46,9 +46,19 @@ struct TeamComposingView: View {
     }
     
     private func clearHeroes() {
+        let newSpots = Self.makeNewSpots()
+        
         withAnimation(.spring()) {
-            selectedHeroes = Array<OWHero?>(repeating: nil, count: 6)
+            selectedHeroes = newSpots
         }
+    }
+    
+    private static func makeNewSpots() -> [HeroSpot] {
+        var newSpots: [HeroSpot] = []
+        for _ in 0...5 {
+            newSpots.append(HeroSpot())
+        }
+        return newSpots
     }
 }
 

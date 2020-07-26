@@ -9,21 +9,39 @@ import SwiftUI
 
 struct SelectableHeroView: View, Identifiable {
 
-    @Binding var hero: OWHero?
+    @Binding var heroSpot: HeroSpot
     
     @EnvironmentObject var session: MatchSession
     
     private(set) var id = UUID()
     
     private var hasHero: Bool {
-        hero != nil
+        heroSpot.hero != nil
     }
     
     @State var isSelected: Bool = false
     
+    var tap: some Gesture {
+        TapGesture()
+            .onEnded { _ in
+                isSelected = true
+                session.focusedHeroView = self
+            }
+    }
+    
+    var doubleTap: some Gesture {
+        TapGesture(count: 2)
+            .onEnded { _ in
+                withAnimation(.easeOut) {
+                    heroSpot.hero = nil
+                    session.focusedHeroView = nil
+                }
+            }
+    }
+    
     var body: some View {
         ZStack {
-            HeroPortraitView(heroPortrait: hero?.portrait, isSelected: isSelected)
+            HeroPortraitView(heroPortrait: heroSpot.hero?.portrait, isSelected: isSelected)
             
             if !hasHero {
                 Text("+")
@@ -31,24 +49,18 @@ struct SelectableHeroView: View, Identifiable {
                     .foregroundColor(.black)
             }
         }
-        .onTapGesture(count: 2) {
-            withAnimation(.easeOut) {
-                hero = nil
-            }
-            session.focusedHeroView = nil
-        }
-        .onTapGesture {
-            isSelected = true
-            session.focusedHeroView = self
-        }
+        .gesture(tap)
+        .simultaneousGesture(doubleTap)
     }
 }
 
 struct SelectableHeroView_Previews: PreviewProvider {
+    static let mei = OWHeroFactory().makeHero(id: "mei")
+    
     static var previews: some View {
         Group {
-            SelectableHeroView(hero: .constant(nil))
-            SelectableHeroView(hero: .constant(OWHeroFactory().makeHero(id: "mei")))
+            SelectableHeroView(heroSpot: .constant(HeroSpot()))
+            SelectableHeroView(heroSpot: .constant(HeroSpot(hero: mei)))
         }
         .previewLayout(.sizeThatFits)
     }

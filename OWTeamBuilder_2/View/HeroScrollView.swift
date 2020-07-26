@@ -23,7 +23,7 @@ struct HeroScrollView: View {
                 ForEach(avaliableHeroes, id: \.self) { hero in
                     HeroPortraitView(heroPortrait: hero.portrait)
                         .onTapGesture {
-                            session.focusedHeroView?.hero = hero
+                            session.focusedHeroView?.heroSpot.hero = hero
                         }
                 }
             }
