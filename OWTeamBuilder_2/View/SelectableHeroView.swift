@@ -15,16 +15,17 @@ struct SelectableHeroView: View, Identifiable {
     
     private(set) var id = UUID()
     
-    private var hasHero: Bool {
-        heroSpot.hero != nil
+    private var isEmpty: Bool {
+        heroSpot.hero == nil
     }
     
-    @State var isSelected: Bool = false
+    private var isSelected: Bool {
+        session.focusedHeroView?.heroSpot.id == heroSpot.id
+    }
     
     var tap: some Gesture {
         TapGesture()
             .onEnded { _ in
-                isSelected = true
                 session.focusedHeroView = self
             }
     }
@@ -41,9 +42,10 @@ struct SelectableHeroView: View, Identifiable {
     
     var body: some View {
         ZStack {
-            HeroPortraitView(heroPortrait: heroSpot.hero?.portrait, isSelected: isSelected)
+            HeroPortraitView(heroPortrait: heroSpot.hero?.portrait,
+                             isSelected: isSelected)
             
-            if !hasHero {
+            if isEmpty {
                 Text("+")
                     .bold()
                     .foregroundColor(.black)

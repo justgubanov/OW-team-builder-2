@@ -9,7 +9,13 @@ import SwiftUI
 
 struct TeamComposingView: View {
     
-    @State private var selectedHeroes = Self.makeNewSpots()
+    @State private var selectedHeroes: [HeroSpot] = {
+        var newSpots: [HeroSpot] = []
+        for _ in 0...5 {
+            newSpots.append(HeroSpot())
+        }
+        return newSpots
+    }()
     
     private var isTeamPopulated: Bool {
         selectedHeroes.contains { spot in
@@ -46,19 +52,11 @@ struct TeamComposingView: View {
     }
     
     private func clearHeroes() {
-        let newSpots = Self.makeNewSpots()
-        
         withAnimation(.spring()) {
-            selectedHeroes = newSpots
+            for i in 0..<selectedHeroes.count {
+                selectedHeroes[i].hero = nil
+            }
         }
-    }
-    
-    private static func makeNewSpots() -> [HeroSpot] {
-        var newSpots: [HeroSpot] = []
-        for _ in 0...5 {
-            newSpots.append(HeroSpot())
-        }
-        return newSpots
     }
 }
 

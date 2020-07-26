@@ -9,12 +9,5 @@ import SwiftUI
 
 class MatchSession: ObservableObject {
     
-    @Published var focusedHeroView: SelectableHeroView? {
-        willSet {
-            guard focusedHeroView?.heroSpot.id != newValue?.heroSpot.id else {
-                return
-            }
-            focusedHeroView?.isSelected = false
-        }
-    }
+    @Published var focusedHeroView: SelectableHeroView?
 }
