@@ -14,14 +14,15 @@ struct ContentView: View {
     var body: some View {
         HStack {
             ZStack {
-                
                 NavigationView {
                     Form {
-                        Group {
-                            TeamComposingView(title: "Enemy team")
-                            TeamComposingView(title: "Your team")
+                        Section {
+                            TeamComposingView(heroes: $session.enemySpots, title: "Enemy team")
                         }
-                        .padding(.all, 10)
+                        
+                        Section {
+                            TeamComposingView(heroes: $session.allySpots, title: "Your team")
+                        }
                     }
                     .navigationTitle(Text("Match composer"))
                 }
