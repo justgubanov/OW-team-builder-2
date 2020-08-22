@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TeamComposingView: View {
     
-    @Binding var heroes: [HeroSpot]
+    @Binding var heroes: [TeamSpot]
     
     private var isTeamPopulated: Bool {
         heroes.contains { spot in
@@ -28,7 +28,7 @@ struct TeamComposingView: View {
             }
             
             HStack (spacing: -13) {
-                ForEach(0...5, id: \.self) { index in
+                ForEach(0..<heroes.count, id: \.self) { index in
                     SelectableHeroView(heroSpot: $heroes[index])
                 }
             }
@@ -56,10 +56,10 @@ struct TeamComposingView: View {
 
 struct TeamComposingView_Previews: PreviewProvider {
     static var previews: some View {
-        let heroes: [HeroSpot] = {
-            var heroes: [HeroSpot] = []
+        let heroes: [TeamSpot] = {
+            var heroes: [TeamSpot] = []
             for _ in 0...5 {
-                heroes.append(HeroSpot())
+                heroes.append(TeamSpot())
             }
             return heroes
         }()

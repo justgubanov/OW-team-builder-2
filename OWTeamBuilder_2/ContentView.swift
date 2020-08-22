@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var session = MatchSession()
+    @ObservedObject var session = MatchSession(teamCapacity: 6)
     
     var body: some View {
         HStack {

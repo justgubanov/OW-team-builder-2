@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SelectableHeroView: View, Identifiable {
 
-    @Binding var heroSpot: HeroSpot
+    @Binding var heroSpot: TeamSpot
     
     @EnvironmentObject var session: MatchSession
     
@@ -61,8 +61,8 @@ struct SelectableHeroView_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            SelectableHeroView(heroSpot: .constant(HeroSpot()))
-            SelectableHeroView(heroSpot: .constant(HeroSpot(hero: mei)))
+            SelectableHeroView(heroSpot: .constant(TeamSpot()))
+            SelectableHeroView(heroSpot: .constant(TeamSpot(hero: mei)))
         }
         .previewLayout(.sizeThatFits)
     }
