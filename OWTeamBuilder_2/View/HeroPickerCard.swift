@@ -12,7 +12,7 @@ struct HeroPickerCard: View {
     @EnvironmentObject private var session: MatchSession
     
     private var isPresented: Bool {
-        session.focusedHeroView != nil
+        session.focusedSpot != nil
     }
     
     var body: some View {
@@ -50,7 +50,7 @@ struct HeroPickerCard: View {
     }
     
     private func close() {
-        session.focusedHeroView = nil
+        session.focusedSpot = nil
     }
 }
 

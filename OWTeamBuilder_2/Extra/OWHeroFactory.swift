@@ -12,11 +12,11 @@ struct OWHeroFactory {
     private static let heroes: [OWHero] = [
         .init(portrait: #imageLiteral(resourceName: "heroPortrait_Raenhard"), name: "Raenhard", tags: .tank, idString: "raenhard"),
         .init(portrait: #imageLiteral(resourceName: "heroPortrait_Winston"), name: "Winston", tags: .tank, idString: "winston"),
-        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Tracer"), name: "Tracer", tags: .damagedealler, idString: "tracer"),
-        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Mei"), name: "Mei", tags: .damagedealler, idString: "mei"),
-        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Genji"), name: "Genji", tags: .damagedealler, idString: "genji"),
-        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Mercy"), name: "Mercy", tags: .healler, idString: "mercy"),
-        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Lucio"), name: "Lucio", tags: .healler, idString: "lucio")
+        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Tracer"), name: "Tracer", tags: .damageDealer, idString: "tracer"),
+        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Mei"), name: "Mei", tags: .damageDealer, idString: "mei"),
+        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Genji"), name: "Genji", tags: .damageDealer, idString: "genji"),
+        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Mercy"), name: "Mercy", tags: .healer, idString: "mercy"),
+        .init(portrait: #imageLiteral(resourceName: "heroPortrait_Lucio"), name: "Lucio", tags: .healer, idString: "lucio")
     ]
     
     func getHeroes() -> [OWHero] {

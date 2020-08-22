@@ -20,10 +20,17 @@ private class SpotsFactory {
 
 class MatchSession: ObservableObject {
     
-    static var teamCapacity: Int = 6
+    @Published var focusedSpot: Binding<HeroSpot>?
     
-    @Published var focusedHeroView: SelectableHeroView?
+    @Published var enemySpots: [HeroSpot]
+    @Published var allySpots: [HeroSpot]
     
-    @Published var enemySpots = SpotsFactory.makeTeam(of: teamCapacity)
-    @Published var allySpots = SpotsFactory.makeTeam(of: teamCapacity)
+    init(teamCapacity: Int = 6) {
+        enemySpots = SpotsFactory.makeTeam(of: teamCapacity)
+        allySpots = SpotsFactory.makeTeam(of: teamCapacity)
+    }
+    
+    func changeFocusedHero(to newHero: OWHero) {
+        focusedSpot?.wrappedValue.hero = newHero
+    }
 }

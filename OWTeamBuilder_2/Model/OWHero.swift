@@ -14,16 +14,16 @@ struct OWHero: Hashable {
         let rawValue: Int
         
         static let tank = TagSet(rawValue: 1 << 0)
-        static let damagedealler = TagSet(rawValue: 1 << 1)
-        static let healler = TagSet(rawValue: 1 << 2)
+        static let damageDealer = TagSet(rawValue: 1 << 1)
+        static let healer = TagSet(rawValue: 1 << 2)
         
         var displayableName: String {
             switch self.rawValue {
             case TagSet.tank.rawValue:
                 return "Tank"
-            case TagSet.damagedealler.rawValue:
+            case TagSet.damageDealer.rawValue:
                 return "Damage dealler"
-            case TagSet.healler.rawValue:
+            case TagSet.healer.rawValue:
                 return "Healler"
             default:
                 return "Unknown"

@@ -13,3 +13,5 @@ struct HeroSpot: Identifiable {
     
     private(set) var id = UUID()
 }
+
+extension HeroSpot: Equatable {}

@@ -16,7 +16,7 @@ struct HeroPicker: View {
         fileprivate var values: [OWHero.TagSet] {
             switch self {
             case .byQueueRole:
-                return [.tank, .damagedealler, .healler]
+                return [.tank, .damageDealer, .healer]
             }
         }
     }
@@ -39,7 +39,7 @@ struct HeroPicker: View {
                         Spacer()
                     }
                     
-                    HeroScrollView(avaliableHeroes: collection.characters)
+                    HeroScrollView(availableHeroes: collection.characters)
                 }
                 .padding(.horizontal, 8)
             }

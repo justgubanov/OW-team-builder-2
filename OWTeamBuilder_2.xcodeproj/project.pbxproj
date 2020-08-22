@@ -22,6 +22,7 @@
 		FA75D2A524BA48A0004F5F9F /* TeamComposingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */; };
 		FA75D2A724BA5192004F5F9F /* HeroPortraitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A624BA5192004F5F9F /* HeroPortraitView.swift */; };
 		FABD7F8124CDED9900B6029A /* HeroSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD7F8024CDED9900B6029A /* HeroSpot.swift */; };
+		FADF0F8F24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF0F8E24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift */; };
 		FAF3387124C4D230007BAA9B /* MatchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3387024C4D22F007BAA9B /* MatchSession.swift */; };
 		FAF3387324C4EB0A007BAA9B /* HeroPickerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */; };
 		FAFE8F5524BB5EE800B5ADB2 /* HeroPortraitBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE8F5424BB5EE800B5ADB2 /* HeroPortraitBackground.swift */; };
@@ -66,6 +67,7 @@
 		FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamComposingView.swift; sourceTree = "<group>"; };
 		FA75D2A624BA5192004F5F9F /* HeroPortraitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPortraitView.swift; sourceTree = "<group>"; };
 		FABD7F8024CDED9900B6029A /* HeroSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroSpot.swift; sourceTree = "<group>"; };
+		FADF0F8E24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension_SafeSubscript.swift; sourceTree = "<group>"; };
 		FAF3387024C4D22F007BAA9B /* MatchSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSession.swift; sourceTree = "<group>"; };
 		FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCard.swift; sourceTree = "<group>"; };
 		FAFE8F5424BB5EE800B5ADB2 /* HeroPortraitBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPortraitBackground.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				FA75D2A224BA3766004F5F9F /* OWHeroFactory.swift */,
+				FADF0F8E24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift */,
 			);
 			path = Extra;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA75D26B24BA3029004F5F9F /* ContentView.swift in Sources */,
+				FADF0F8F24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift in Sources */,
 				FA75D29E24BA374E004F5F9F /* SelectableHeroView.swift in Sources */,
 				FA75D2A124BA375D004F5F9F /* OWHero.swift in Sources */,
 				FA75D29D24BA374E004F5F9F /* HeroPortraitViewMask.swift in Sources */,

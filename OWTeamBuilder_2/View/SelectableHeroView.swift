@@ -20,13 +20,13 @@ struct SelectableHeroView: View, Identifiable {
     }
     
     private var isSelected: Bool {
-        session.focusedHeroView?.heroSpot.id == heroSpot.id
+        session.focusedSpot?.wrappedValue.id == heroSpot.id
     }
     
     var tap: some Gesture {
         TapGesture()
             .onEnded { _ in
-                session.focusedHeroView = self
+                session.focusedSpot = $heroSpot
             }
     }
     
@@ -35,7 +35,7 @@ struct SelectableHeroView: View, Identifiable {
             .onEnded { _ in
                 withAnimation(.easeOut) {
                     heroSpot.hero = nil
-                    session.focusedHeroView = nil
+                    session.focusedSpot = nil
                 }
             }
     }
