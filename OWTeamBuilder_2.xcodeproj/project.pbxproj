@@ -23,6 +23,14 @@
 		FA75D2A324BA3766004F5F9F /* OWHeroFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A224BA3766004F5F9F /* OWHeroFactory.swift */; };
 		FA75D2A524BA48A0004F5F9F /* TeamComposingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */; };
 		FA75D2A724BA5192004F5F9F /* HeroPortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A624BA5192004F5F9F /* HeroPortrait.swift */; };
+		FA9EFA7724F27EF800F46615 /* HeroPicker.GroupCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA7624F27EF800F46615 /* HeroPicker.GroupCriteria.swift */; };
+		FA9EFA7924F27F3800F46615 /* HeroPicker.SortCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA7824F27F3800F46615 /* HeroPicker.SortCriteria.swift */; };
+		FA9EFA7B24F27F7800F46615 /* HeroPicker.Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA7A24F27F7800F46615 /* HeroPicker.Collection.swift */; };
+		FA9EFA7D24F280CC00F46615 /* HeroPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA7C24F280CC00F46615 /* HeroPickerCell.swift */; };
+		FA9EFA7F24F2D5C200F46615 /* HeroPickerCard.CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA7E24F2D5C200F46615 /* HeroPickerCard.CloseButton.swift */; };
+		FA9EFA8124F2D62D00F46615 /* HeroPickerCard.SortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA8024F2D62D00F46615 /* HeroPickerCard.SortButton.swift */; };
+		FA9EFA8324F2E63100F46615 /* HeroPickerCard.GroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA8224F2E63100F46615 /* HeroPickerCard.GroupButton.swift */; };
+		FA9EFA8524F2EFE200F46615 /* TierTagAssigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA8424F2EFE200F46615 /* TierTagAssigner.swift */; };
 		FABD7F8124CDED9900B6029A /* TeamSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD7F8024CDED9900B6029A /* TeamSpot.swift */; };
 		FADF0F8F24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF0F8E24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift */; };
 		FAF3387124C4D230007BAA9B /* MatchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3387024C4D22F007BAA9B /* MatchSession.swift */; };
@@ -70,6 +78,14 @@
 		FA75D2A224BA3766004F5F9F /* OWHeroFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWHeroFactory.swift; sourceTree = "<group>"; };
 		FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamComposingView.swift; sourceTree = "<group>"; };
 		FA75D2A624BA5192004F5F9F /* HeroPortrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPortrait.swift; sourceTree = "<group>"; };
+		FA9EFA7624F27EF800F46615 /* HeroPicker.GroupCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPicker.GroupCriteria.swift; sourceTree = "<group>"; };
+		FA9EFA7824F27F3800F46615 /* HeroPicker.SortCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPicker.SortCriteria.swift; sourceTree = "<group>"; };
+		FA9EFA7A24F27F7800F46615 /* HeroPicker.Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPicker.Collection.swift; sourceTree = "<group>"; };
+		FA9EFA7C24F280CC00F46615 /* HeroPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCell.swift; sourceTree = "<group>"; };
+		FA9EFA7E24F2D5C200F46615 /* HeroPickerCard.CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCard.CloseButton.swift; sourceTree = "<group>"; };
+		FA9EFA8024F2D62D00F46615 /* HeroPickerCard.SortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCard.SortButton.swift; sourceTree = "<group>"; };
+		FA9EFA8224F2E63100F46615 /* HeroPickerCard.GroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCard.GroupButton.swift; sourceTree = "<group>"; };
+		FA9EFA8424F2EFE200F46615 /* TierTagAssigner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TierTagAssigner.swift; sourceTree = "<group>"; };
 		FABD7F8024CDED9900B6029A /* TeamSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSpot.swift; sourceTree = "<group>"; };
 		FADF0F8E24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension_SafeSubscript.swift; sourceTree = "<group>"; };
 		FAF3387024C4D22F007BAA9B /* MatchSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSession.swift; sourceTree = "<group>"; };
@@ -105,9 +121,13 @@
 		FA18776024F2598500496D2E /* HeroPicker */ = {
 			isa = PBXGroup;
 			children = (
-				FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */,
 				FA75D29824BA374B004F5F9F /* HeroPicker.swift */,
+				FA9EFA7A24F27F7800F46615 /* HeroPicker.Collection.swift */,
+				FA9EFA7624F27EF800F46615 /* HeroPicker.GroupCriteria.swift */,
+				FA9EFA7824F27F3800F46615 /* HeroPicker.SortCriteria.swift */,
+				FA9EFA7C24F280CC00F46615 /* HeroPickerCell.swift */,
 				FA75D29B24BA374D004F5F9F /* HeroPickerScroll.swift */,
+				FA9EFA8624F2F11600F46615 /* HeroPickerCard */,
 			);
 			path = HeroPicker;
 			sourceTree = "<group>";
@@ -209,6 +229,7 @@
 				FABD7F8024CDED9900B6029A /* TeamSpot.swift */,
 				FAF3387024C4D22F007BAA9B /* MatchSession.swift */,
 				FA18775E24F258B100496D2E /* TeamFactory.swift */,
+				FA9EFA8424F2EFE200F46615 /* TierTagAssigner.swift */,
 				FA18776224F25B7B00496D2E /* OWHero */,
 			);
 			path = Model;
@@ -221,6 +242,17 @@
 				FADF0F8E24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift */,
 			);
 			path = Extra;
+			sourceTree = "<group>";
+		};
+		FA9EFA8624F2F11600F46615 /* HeroPickerCard */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */,
+				FA9EFA7E24F2D5C200F46615 /* HeroPickerCard.CloseButton.swift */,
+				FA9EFA8024F2D62D00F46615 /* HeroPickerCard.SortButton.swift */,
+				FA9EFA8224F2E63100F46615 /* HeroPickerCard.GroupButton.swift */,
+			);
+			path = HeroPickerCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,23 +384,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9EFA8524F2EFE200F46615 /* TierTagAssigner.swift in Sources */,
 				FA75D26B24BA3029004F5F9F /* ContentView.swift in Sources */,
 				FADF0F8F24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift in Sources */,
 				FA75D29E24BA374E004F5F9F /* SelectableHeroView.swift in Sources */,
 				FA75D2A124BA375D004F5F9F /* OWHero.swift in Sources */,
+				FA9EFA7F24F2D5C200F46615 /* HeroPickerCard.CloseButton.swift in Sources */,
 				FA75D29D24BA374E004F5F9F /* HeroPortraitMask.swift in Sources */,
 				FA18775F24F258B100496D2E /* TeamFactory.swift in Sources */,
 				FAF3387324C4EB0A007BAA9B /* HeroPickerCard.swift in Sources */,
+				FA9EFA8324F2E63100F46615 /* HeroPickerCard.GroupButton.swift in Sources */,
 				FA75D2A524BA48A0004F5F9F /* TeamComposingView.swift in Sources */,
 				FA75D2A724BA5192004F5F9F /* HeroPortrait.swift in Sources */,
+				FA9EFA7724F27EF800F46615 /* HeroPicker.GroupCriteria.swift in Sources */,
+				FA9EFA7D24F280CC00F46615 /* HeroPickerCell.swift in Sources */,
 				FA18775D24F2537800496D2E /* OWHero.TagSet.swift in Sources */,
 				FA75D29F24BA374E004F5F9F /* HeroPickerScroll.swift in Sources */,
 				FA75D2A324BA3766004F5F9F /* OWHeroFactory.swift in Sources */,
+				FA9EFA8124F2D62D00F46615 /* HeroPickerCard.SortButton.swift in Sources */,
 				FAFE8F5524BB5EE800B5ADB2 /* HeroPortraitBackground.swift in Sources */,
 				FABD7F8124CDED9900B6029A /* TeamSpot.swift in Sources */,
 				FAF3387124C4D230007BAA9B /* MatchSession.swift in Sources */,
+				FA9EFA7B24F27F7800F46615 /* HeroPicker.Collection.swift in Sources */,
 				FA75D26924BA3029004F5F9F /* OWTeamBuilder_2App.swift in Sources */,
 				FA75D29C24BA374E004F5F9F /* HeroPicker.swift in Sources */,
+				FA9EFA7924F27F3800F46615 /* HeroPicker.SortCriteria.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

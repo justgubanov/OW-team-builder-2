@@ -15,10 +15,10 @@ class MatchSession: ObservableObject {
     @Published var allySpots: [TeamSpot]
     
     init(teamCapacity: Int) {
-        let composition = TeamFactory.Composition.free(count: 6)
+//        let composition = TeamFactory.Composition.twoTwoTwo
         
-        enemySpots = TeamFactory.makeTeam(with: composition)
-        allySpots = TeamFactory.makeTeam(with: composition)
+        enemySpots = TeamFactory.makeTeam(with: .twoTwoTwo)
+        allySpots = TeamFactory.makeTeam(with: .free(count: 6))
     }
     
     func setHeroInFocusedSpot(to newHero: OWHero) {

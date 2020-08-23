@@ -21,10 +21,7 @@ struct HeroPickerScroll: View {
                     .frame(width: 8)
                 
                 ForEach(availableHeroes, id: \.self) { hero in
-                    HeroPortrait(image: hero.portrait)
-                        .onTapGesture {
-                            session.setHeroInFocusedSpot(to: hero)
-                        }
+                    HeroPickerCell(hero: hero)
                 }
             }
         }

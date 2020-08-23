@@ -17,6 +17,10 @@ extension OWHero {
         static let damage = TagSet(rawValue: 1 << 1)
         static let support = TagSet(rawValue: 1 << 2)
         
+        static let tierOne = TagSet(rawValue: 1 << 3)
+        static let tierTwo = TagSet(rawValue: 1 << 4)
+        static let tierThree = TagSet(rawValue: 1 << 5)
+        
         var displayableName: String {
             switch self.rawValue {
             case TagSet.tank.rawValue:
@@ -25,6 +29,12 @@ extension OWHero {
                 return "Damage"
             case TagSet.support.rawValue:
                 return "Support"
+            case TagSet.tierOne.rawValue:
+                return "Tier I"
+            case TagSet.tierTwo.rawValue:
+                return "Tier II"
+            case TagSet.tierThree.rawValue:
+                return "Tier III"
             default:
                 return "Unknown"
             }
