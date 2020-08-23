@@ -20,7 +20,7 @@ struct HeroPickerCard: View {
             if isPresented {
                 VStack {
                     Spacer()
-
+                    
                     HStack {
                         Spacer()
                         Button(action: close) {
@@ -30,10 +30,10 @@ struct HeroPickerCard: View {
                                 .frame(width: 40, height: 40)
                         }
                     }
-
+                    
                     VStack {
                         HeroPicker(heroesToSelectFrom: OWHeroFactory().getHeroes())
-
+                        
                         Spacer()
                             .frame(height: 20)
                     }

@@ -9,7 +9,16 @@ import Foundation
 
 class TeamSpot: Identifiable {
     
+    enum RoleLock {
+        
+        case any
+        case tank
+        case damage
+        case support
+    }
+    
     var hero: OWHero?
+    var roleLock: RoleLock = .any
     
     private(set) var id = UUID()
     

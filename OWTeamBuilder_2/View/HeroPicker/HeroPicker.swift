@@ -1,5 +1,5 @@
 //
-//  HeroSelectorView.swift
+//  HeroPicker.swift
 //  OWTeamBuilder_2
 //
 //  Created by Александр Губанов on 11.07.2020.
@@ -16,17 +16,17 @@ struct HeroPicker: View {
         fileprivate var values: [OWHero.TagSet] {
             switch self {
             case .byQueueRole:
-                return [.tank, .damageDealer, .healer]
+                return [.tank, .damage, .support]
             }
         }
     }
     
     private struct Collection: Hashable {
-    
+        
         var name: String
         var characters: [OWHero]
     }
-        
+    
     var heroesToSelectFrom: [OWHero]
     var groupingCriteria = GroupCriteria.byQueueRole
     
@@ -39,7 +39,7 @@ struct HeroPicker: View {
                         Spacer()
                     }
                     
-                    HeroScrollView(availableHeroes: collection.characters)
+                    HeroPickerScroll(availableHeroes: collection.characters)
                 }
                 .padding(.horizontal, 8)
             }

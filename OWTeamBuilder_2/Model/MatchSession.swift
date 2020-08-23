@@ -7,17 +7,6 @@
 
 import SwiftUI
 
-private class SpotsFactory {
-    
-    static func makeTeam(of number: Int) -> [TeamSpot] {
-        var spots: [TeamSpot] = []
-        for _ in 0..<number {
-            spots.append(TeamSpot())
-        }
-        return spots
-    }
-}
-
 class MatchSession: ObservableObject {
     
     @Published var focusedSpot: Binding<TeamSpot>?
@@ -26,8 +15,10 @@ class MatchSession: ObservableObject {
     @Published var allySpots: [TeamSpot]
     
     init(teamCapacity: Int) {
-        enemySpots = SpotsFactory.makeTeam(of: teamCapacity)
-        allySpots = SpotsFactory.makeTeam(of: teamCapacity)
+        let composition = TeamFactory.Composition.free(count: 6)
+        
+        enemySpots = TeamFactory.makeTeam(with: composition)
+        allySpots = TeamFactory.makeTeam(with: composition)
     }
     
     func setHeroInFocusedSpot(to newHero: OWHero) {
@@ -44,7 +35,7 @@ class MatchSession: ObservableObject {
            let nextSpot = getNextSpot(from: enemySpots, after: positionInEnemyTeam) {
             focusedSpot = .constant(nextSpot)
         }
-
+        
         if let positionInAllyTeam = allySpots.firstIndex(where: { $0.id == focusedSpotId }),
            let nextSpot = getNextSpot(from: allySpots, after: positionInAllyTeam) {
             focusedSpot = .constant(nextSpot)

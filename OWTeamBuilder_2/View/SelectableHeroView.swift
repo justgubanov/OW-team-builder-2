@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SelectableHeroView: View, Identifiable {
-
+    
     @Binding var heroSpot: TeamSpot
     
     @EnvironmentObject var session: MatchSession
@@ -42,8 +42,8 @@ struct SelectableHeroView: View, Identifiable {
     
     var body: some View {
         ZStack {
-            HeroPortraitView(heroPortrait: heroSpot.hero?.portrait,
-                             isSelected: isSelected)
+            HeroPortrait(image: heroSpot.hero?.portrait,
+                         isSelected: isSelected)
             
             if isEmpty {
                 Text("+")
