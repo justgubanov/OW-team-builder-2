@@ -9,16 +9,25 @@ import Foundation
 
 class TeamFactory {
     
-    enum Composition {
+    enum Composition: Equatable {
         
-        case free(count: Int)
+        case free
         case twoTwoTwo
+        
+        var locks: [TeamSpot.RoleLock] {
+            switch self {
+            case .free:
+                return Array(repeating: .any, count: 6)
+            case .twoTwoTwo:
+                return [.tank, .tank, .damage, .damage, .support, .support]
+            }
+        }
     }
     
     static func makeTeam(with composition: Composition) -> [TeamSpot] {
         switch composition {
-        case .free(count: let count):
-            return makeFreeTeam(of: count)
+        case .free:
+            return makeFreeTeam(of: 6)
         case .twoTwoTwo:
             return makeTwoTwoTwoTeam()
         }

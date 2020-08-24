@@ -14,16 +14,24 @@ class MatchSession: ObservableObject {
     @Published var enemySpots: [TeamSpot]
     @Published var allySpots: [TeamSpot]
     
-    init(teamCapacity: Int) {
-//        let composition = TeamFactory.Composition.twoTwoTwo
-        
-        enemySpots = TeamFactory.makeTeam(with: .twoTwoTwo)
-        allySpots = TeamFactory.makeTeam(with: .free(count: 6))
+    private(set) var composition = TeamFactory.Composition.twoTwoTwo
+    
+    init() {
+        enemySpots = TeamFactory.makeTeam(with: composition)
+        allySpots = TeamFactory.makeTeam(with: composition)
     }
     
     func setHeroInFocusedSpot(to newHero: OWHero) {
         focusedSpot?.wrappedValue.hero = newHero
         moveToNextSpot()
+    }
+    
+    func makeNewTeams(with newComposition: TeamFactory.Composition) {
+        focusedSpot = nil
+        composition = newComposition
+        
+        enemySpots = TeamFactory.makeTeam(with: composition)
+        allySpots = TeamFactory.makeTeam(with: composition)
     }
     
     private func moveToNextSpot() {

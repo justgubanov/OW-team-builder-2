@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FA18775D24F2537800496D2E /* OWHero.TagSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18775C24F2537800496D2E /* OWHero.TagSet.swift */; };
 		FA18775F24F258B100496D2E /* TeamFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18775E24F258B100496D2E /* TeamFactory.swift */; };
+		FA62198124F45CFF00491C03 /* MatchComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62198024F45CFF00491C03 /* MatchComposeView.swift */; };
+		FA62198324F45D4E00491C03 /* MatchComposeView.CompositionChangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62198224F45D4E00491C03 /* MatchComposeView.CompositionChangeButton.swift */; };
 		FA75D26924BA3029004F5F9F /* OWTeamBuilder_2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D26824BA3029004F5F9F /* OWTeamBuilder_2App.swift */; };
 		FA75D26B24BA3029004F5F9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D26A24BA3029004F5F9F /* ContentView.swift */; };
 		FA75D26D24BA302B004F5F9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA75D26C24BA302B004F5F9F /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 /* Begin PBXFileReference section */
 		FA18775C24F2537800496D2E /* OWHero.TagSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWHero.TagSet.swift; sourceTree = "<group>"; };
 		FA18775E24F258B100496D2E /* TeamFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamFactory.swift; sourceTree = "<group>"; };
+		FA62198024F45CFF00491C03 /* MatchComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchComposeView.swift; sourceTree = "<group>"; };
+		FA62198224F45D4E00491C03 /* MatchComposeView.CompositionChangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchComposeView.CompositionChangeButton.swift; sourceTree = "<group>"; };
 		FA75D26524BA3029004F5F9F /* OWTeamBuilder_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OWTeamBuilder_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA75D26824BA3029004F5F9F /* OWTeamBuilder_2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWTeamBuilder_2App.swift; sourceTree = "<group>"; };
 		FA75D26A24BA3029004F5F9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -151,6 +155,15 @@
 			path = OWHero;
 			sourceTree = "<group>";
 		};
+		FA62198424F46A4400491C03 /* MatchComposeView */ = {
+			isa = PBXGroup;
+			children = (
+				FA62198024F45CFF00491C03 /* MatchComposeView.swift */,
+				FA62198224F45D4E00491C03 /* MatchComposeView.CompositionChangeButton.swift */,
+			);
+			path = MatchComposeView;
+			sourceTree = "<group>";
+		};
 		FA75D25C24BA3028004F5F9F = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +228,7 @@
 		FA75D29324BA3689004F5F9F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA62198424F46A4400491C03 /* MatchComposeView */,
 				FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */,
 				FA75D29A24BA374D004F5F9F /* SelectableHeroView.swift */,
 				FA18776024F2598500496D2E /* HeroPicker */,
@@ -391,6 +405,7 @@
 				FA75D2A124BA375D004F5F9F /* OWHero.swift in Sources */,
 				FA9EFA7F24F2D5C200F46615 /* HeroPickerCard.CloseButton.swift in Sources */,
 				FA75D29D24BA374E004F5F9F /* HeroPortraitMask.swift in Sources */,
+				FA62198324F45D4E00491C03 /* MatchComposeView.CompositionChangeButton.swift in Sources */,
 				FA18775F24F258B100496D2E /* TeamFactory.swift in Sources */,
 				FAF3387324C4EB0A007BAA9B /* HeroPickerCard.swift in Sources */,
 				FA9EFA8324F2E63100F46615 /* HeroPickerCard.GroupButton.swift in Sources */,
@@ -407,6 +422,7 @@
 				FAF3387124C4D230007BAA9B /* MatchSession.swift in Sources */,
 				FA9EFA7B24F27F7800F46615 /* HeroPicker.Collection.swift in Sources */,
 				FA75D26924BA3029004F5F9F /* OWTeamBuilder_2App.swift in Sources */,
+				FA62198124F45CFF00491C03 /* MatchComposeView.swift in Sources */,
 				FA75D29C24BA374E004F5F9F /* HeroPicker.swift in Sources */,
 				FA9EFA7924F27F3800F46615 /* HeroPicker.SortCriteria.swift in Sources */,
 			);
