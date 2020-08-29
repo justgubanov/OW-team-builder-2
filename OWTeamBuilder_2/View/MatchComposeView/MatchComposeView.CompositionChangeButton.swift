@@ -24,7 +24,7 @@ extension MatchComposeView {
         var body: some View {
             Button(toggleRoleLockTitle) {
                 let newComposition: TeamFactory.Composition = isRoleLockEnabled ? .free : .twoTwoTwo
-                session.makeNewTeams(with: newComposition)
+                session.resetTeams(set: newComposition)
             }
         }
     }

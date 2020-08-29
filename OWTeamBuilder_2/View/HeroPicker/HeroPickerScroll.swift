@@ -9,8 +9,6 @@ import SwiftUI
 
 struct HeroPickerScroll: View {
     
-    @EnvironmentObject private var session: MatchSession
-    
     var availableHeroes: [OWHero]
     
     var body: some View {

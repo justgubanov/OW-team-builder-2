@@ -25,6 +25,7 @@ struct HeroPortraitMask: Shape {
             bottomLeftCorner,
             topLeftCorner
         ])
+        path.closeSubpath()
         return path
     }
 }

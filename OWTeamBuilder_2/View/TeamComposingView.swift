@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TeamComposingView: View {
     
+    @EnvironmentObject var session: MatchSession
+    
     @Binding var heroes: [TeamSpot]
     
     private var isTeamPopulated: Bool {
@@ -46,11 +48,7 @@ struct TeamComposingView: View {
     }
     
     private func clearHeroes() {
-        withAnimation(.spring()) {
-            for i in 0..<heroes.count {
-                heroes[i].hero = nil
-            }
-        }
+        session.resetTeams()
     }
 }
 

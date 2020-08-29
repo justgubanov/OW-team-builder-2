@@ -26,9 +26,11 @@ class MatchSession: ObservableObject {
         moveToNextSpot()
     }
     
-    func makeNewTeams(with newComposition: TeamFactory.Composition) {
+    func resetTeams(set newComposition: TeamFactory.Composition? = nil) {
+        if let newComposition = newComposition {
+            composition = newComposition
+        }
         focusedSpot = nil
-        composition = newComposition
         
         enemySpots = TeamFactory.makeTeam(with: composition)
         allySpots = TeamFactory.makeTeam(with: composition)

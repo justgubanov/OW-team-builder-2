@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HeroPortrait: View {
     
-    private let aspect: CGFloat = 0.8
+    static let aspect: CGFloat = 0.8
     
     var image: UIImage?
     var isSelected: Bool = false
@@ -32,7 +32,7 @@ struct HeroPortrait: View {
             }
         }
         .clipShape(HeroPortraitMask())
-        .aspectRatio(aspect, contentMode: .fit)
+        .aspectRatio(Self.aspect, contentMode: .fit)
     }
 }
 
