@@ -23,6 +23,7 @@ class MatchSession: ObservableObject {
     
     func setHeroInFocusedSpot(to newHero: OWHero) {
         focusedSpot?.wrappedValue.hero = newHero
+        objectWillChange.send()
         moveToNextSpot()
     }
     
