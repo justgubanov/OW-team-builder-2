@@ -11,6 +11,8 @@
 		FA18775F24F258B100496D2E /* TeamFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18775E24F258B100496D2E /* TeamFactory.swift */; };
 		FA424CD124FB7F7E001E5AE2 /* OWTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA424CD024FB7F7E001E5AE2 /* OWTeam.swift */; };
 		FA424CD324FB8192001E5AE2 /* MatchComposeView.OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA424CD224FB8192001E5AE2 /* MatchComposeView.OptionButton.swift */; };
+		FA424CD524FBB039001E5AE2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA424CD424FBB039001E5AE2 /* SettingsView.swift */; };
+		FA424CD924FBBBA2001E5AE2 /* MatchComposeView.SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA424CD824FBBBA1001E5AE2 /* MatchComposeView.SettingsButton.swift */; };
 		FA62198124F45CFF00491C03 /* MatchComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62198024F45CFF00491C03 /* MatchComposeView.swift */; };
 		FA62198324F45D4E00491C03 /* MatchComposeView.CompositionChangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62198224F45D4E00491C03 /* MatchComposeView.CompositionChangeButton.swift */; };
 		FA75D26924BA3029004F5F9F /* OWTeamBuilder_2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D26824BA3029004F5F9F /* OWTeamBuilder_2App.swift */; };
@@ -64,6 +66,8 @@
 		FA18775E24F258B100496D2E /* TeamFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamFactory.swift; sourceTree = "<group>"; };
 		FA424CD024FB7F7E001E5AE2 /* OWTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWTeam.swift; sourceTree = "<group>"; };
 		FA424CD224FB8192001E5AE2 /* MatchComposeView.OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchComposeView.OptionButton.swift; sourceTree = "<group>"; };
+		FA424CD424FBB039001E5AE2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FA424CD824FBBBA1001E5AE2 /* MatchComposeView.SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchComposeView.SettingsButton.swift; sourceTree = "<group>"; };
 		FA62198024F45CFF00491C03 /* MatchComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchComposeView.swift; sourceTree = "<group>"; };
 		FA62198224F45D4E00491C03 /* MatchComposeView.CompositionChangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchComposeView.CompositionChangeButton.swift; sourceTree = "<group>"; };
 		FA75D26524BA3029004F5F9F /* OWTeamBuilder_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OWTeamBuilder_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,8 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				FA62198024F45CFF00491C03 /* MatchComposeView.swift */,
-				FA424CD224FB8192001E5AE2 /* MatchComposeView.OptionButton.swift */,
+				FA424CD824FBBBA1001E5AE2 /* MatchComposeView.SettingsButton.swift */,
 				FA62198224F45D4E00491C03 /* MatchComposeView.CompositionChangeButton.swift */,
+				FA424CD224FB8192001E5AE2 /* MatchComposeView.OptionButton.swift */,
 			);
 			path = MatchComposeView;
 			sourceTree = "<group>";
@@ -233,9 +238,10 @@
 		FA75D29324BA3689004F5F9F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FA62198424F46A4400491C03 /* MatchComposeView */,
+				FA424CD424FBB039001E5AE2 /* SettingsView.swift */,
 				FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */,
 				FA75D29A24BA374D004F5F9F /* SelectableHeroView.swift */,
+				FA62198424F46A4400491C03 /* MatchComposeView */,
 				FA18776024F2598500496D2E /* HeroPicker */,
 				FA18776124F25A5100496D2E /* HeroPortrait */,
 			);
@@ -419,10 +425,12 @@
 				FA75D2A724BA5192004F5F9F /* HeroPortrait.swift in Sources */,
 				FA9EFA7724F27EF800F46615 /* HeroPicker.GroupCriteria.swift in Sources */,
 				FA9EFA7D24F280CC00F46615 /* HeroPickerCell.swift in Sources */,
+				FA424CD524FBB039001E5AE2 /* SettingsView.swift in Sources */,
 				FA18775D24F2537800496D2E /* OWHero.TagSet.swift in Sources */,
 				FA75D29F24BA374E004F5F9F /* HeroPickerScroll.swift in Sources */,
 				FA75D2A324BA3766004F5F9F /* OWHeroFactory.swift in Sources */,
 				FA9EFA8124F2D62D00F46615 /* HeroPickerCard.SortButton.swift in Sources */,
+				FA424CD924FBBBA2001E5AE2 /* MatchComposeView.SettingsButton.swift in Sources */,
 				FA424CD324FB8192001E5AE2 /* MatchComposeView.OptionButton.swift in Sources */,
 				FAFE8F5524BB5EE800B5ADB2 /* HeroPortraitBackground.swift in Sources */,
 				FABD7F8124CDED9900B6029A /* TeamSpot.swift in Sources */,

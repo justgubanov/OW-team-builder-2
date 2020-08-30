@@ -9,6 +9,8 @@ import SwiftUI
 
 class MatchSession: ObservableObject {
     
+    @AppStorage("isAutoSwitchingEnabled") var isAutoSwitchingEnabled: Bool = true
+    
     @Published var focusedSpot: Binding<TeamSpot>?
     
     @Published var enemySpots: [TeamSpot]
@@ -23,7 +25,11 @@ class MatchSession: ObservableObject {
     
     func setHeroInFocusedSpot(to newHero: OWHero) {
         focusedSpot?.wrappedValue.hero = newHero
-        objectWillChange.send()
+        
+        guard isAutoSwitchingEnabled else {
+            objectWillChange.send()
+            return
+        }
         moveToNextSpot()
     }
     

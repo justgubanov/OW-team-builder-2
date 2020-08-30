@@ -11,6 +11,8 @@ struct MatchComposeView: View {
     
     @EnvironmentObject var session: MatchSession
     
+    @State var showSettings: Bool = false
+    
     var body: some View {
         HStack {
             ZStack {
@@ -25,11 +27,16 @@ struct MatchComposeView: View {
                         }
                     }
                     .navigationTitle(Text("Match composer"))
-                    .navigationBarItems(trailing: OptionButton())
+                    .navigationBarItems(leading: SettingsButton(showSettings: $showSettings),
+                                        trailing: OptionButton())
                 }
                 
                 HeroPickerCard()
             }
+        }
+        
+        .sheet(isPresented: $showSettings) {
+            SettingsView()
         }
     }
 }
