@@ -13,18 +13,35 @@ extension MatchComposeView {
         
         @EnvironmentObject var session: MatchSession
         
-        var isRoleLockEnabled: Bool {
-            return session.composition == .twoTwoTwo
-        }
-        
-        private var toggleRoleLockTitle: String {
-            return isRoleLockEnabled ? "Restart without role lock" : "Restart with role lock"
-        }
+        var composition: OWTeam.Composition
         
         var body: some View {
-            Button(toggleRoleLockTitle) {
-                let newComposition: TeamFactory.Composition = isRoleLockEnabled ? .free : .twoTwoTwo
-                session.resetTeams(set: newComposition)
+            Button {
+                session.resetTeams(set: composition)
+            } label: {
+                HStack {
+                    Text(title)
+                    
+                    compositionImage
+                }
+            }
+        }
+        
+        private var title: String {
+            switch composition {
+            case .openRoles:
+                return "Open roles"
+            case .twoTwoTwo:
+                return "Two-Two-Two"
+            }
+        }
+        
+        private var compositionImage: some View {
+            switch composition {
+            case .openRoles:
+                return Image(uiImage: UIImage())
+            case .twoTwoTwo:
+                return Image(systemName: "lock.shield")
             }
         }
     }
@@ -32,6 +49,7 @@ extension MatchComposeView {
 
 struct MatchComposeView_CompositionChangeButton_Previews: PreviewProvider {
     static var previews: some View {
-        MatchComposeView.CompositionChangeButton()
+        MatchComposeView.CompositionChangeButton(composition: .twoTwoTwo)
+            .environmentObject(MatchSession())
     }
 }

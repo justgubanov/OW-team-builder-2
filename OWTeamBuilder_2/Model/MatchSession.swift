@@ -14,7 +14,7 @@ class MatchSession: ObservableObject {
     @Published var enemySpots: [TeamSpot]
     @Published var allySpots: [TeamSpot]
     
-    private(set) var composition = TeamFactory.Composition.twoTwoTwo
+    private(set) var composition: OWTeam.Composition = .twoTwoTwo
     
     init() {
         enemySpots = TeamFactory.makeTeam(with: composition)
@@ -27,7 +27,7 @@ class MatchSession: ObservableObject {
         moveToNextSpot()
     }
     
-    func resetTeams(set newComposition: TeamFactory.Composition? = nil) {
+    func resetTeams(set newComposition: OWTeam.Composition? = nil) {
         if let newComposition = newComposition {
             composition = newComposition
         }

@@ -25,25 +25,11 @@ struct MatchComposeView: View {
                         }
                     }
                     .navigationTitle(Text("Match composer"))
-                    .navigationBarItems(trailing: optionButton)
+                    .navigationBarItems(trailing: OptionButton())
                 }
                 
                 HeroPickerCard()
             }
-        }
-    }
-    
-    private var optionButton: some View {
-        Button(action: {
-            print("Edit button was tapped")
-        }) {
-            Image(systemName: "ellipsis.circle")
-                .font(.system(.body))
-                .imageScale(.large)
-                .accentColor(.orange)
-        }
-        .contextMenu {
-            CompositionChangeButton()
         }
     }
 }
