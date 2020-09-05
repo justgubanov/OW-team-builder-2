@@ -26,7 +26,7 @@ struct SelectableHeroView: View, Identifiable {
     var tap: some Gesture {
         TapGesture()
             .onEnded { _ in
-                session.focusedSpot = $heroSpot
+                session.setFocusedSpot(to: $heroSpot)
             }
     }
     
@@ -35,15 +35,18 @@ struct SelectableHeroView: View, Identifiable {
             .onEnded { _ in
                 withAnimation(.easeOut) {
                     heroSpot.hero = nil
-                    session.focusedSpot = nil
                 }
             }
     }
     
     var body: some View {
         ZStack {
-            HeroPortrait(image: heroSpot.hero?.portrait,
-                         isSelected: isSelected)
+            if isSelected {
+                HeroPortrait(image: heroSpot.hero?.portrait,
+                             background: AnyView(Color(#colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1))))
+            } else {
+                HeroPortrait(image: heroSpot.hero?.portrait)
+            }
             
             if isEmpty {
                 Text("+")

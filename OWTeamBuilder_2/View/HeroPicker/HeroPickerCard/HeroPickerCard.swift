@@ -18,15 +18,15 @@ struct HeroPickerCard: View {
         return session.focusedSpot?.wrappedValue.roleLock != .any
     }
     
-    private var sortCriteria: HeroPicker.SortCriteria {
-        return sortsByRank ? .byCompositionValue : .alphabetically
+    private var sortCriteria: PickableHeroCollection.SortCriteria {
+        return sortsByRank ? .compositionValue : .name
     }
     
-    private var groupCriteria: HeroPicker.GroupCriteria {
+    private var groupCriteria: HeroCollectionFabric.GroupCriteria {
         guard !isRoleLocked else {
-            return .byTierValue
+            return .tierValue
         }
-        return groupsByRole ? .byQueueRole : .byTierValue
+        return groupsByRole ? .queueRole : .tierValue
     }
     
     private var isPresented: Bool {
@@ -68,7 +68,7 @@ struct HeroPickerCard: View {
     }
     
     private func closePicker() {
-        session.focusedSpot = nil
+        session.setFocusedSpot(to: nil)
     }
     
     private func toggleSort() {

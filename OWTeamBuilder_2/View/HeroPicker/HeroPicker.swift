@@ -17,8 +17,8 @@ struct HeroPicker: View {
         return heroes
     }
     
-    var groupCriteria: GroupCriteria = .byTierValue
-    var sortCriteria: SortCriteria = .alphabetically
+    var groupCriteria: HeroCollectionFabric.GroupCriteria = .tierValue
+    var sortCriteria: PickableHeroCollection.SortCriteria = .name
     
     var body: some View {
         VStack(spacing: 40) {
@@ -30,7 +30,7 @@ struct HeroPicker: View {
                         Spacer()
                     }
                     
-                    HeroPickerScroll(availableHeroes: collection.characters)
+                    HeroPickerScroll(availableHeroes: collection.pickableHeroes)
                 }
                 .padding(.horizontal, 8)
             }
@@ -38,43 +38,24 @@ struct HeroPicker: View {
         .padding(.vertical, 20)
     }
     
-    private var collections: [Collection] {
-        var collections = [Collection]()
+    private var collections: [PickableHeroCollection] {
+        let collectionFabric = HeroCollectionFabric(session: session)
+        var collections = collectionFabric.makeCollections(from: heroesToSelectFrom, groupingCriteria: groupCriteria)
         
-        for tag in groupCriteria.values {
-            let matchedHeroes = heroesToSelectFrom.filter { hero in
-                hero.tags.contains(tag)
-            }
-            
-            guard !matchedHeroes.isEmpty else {
-                continue
-            }
-            let sortedHeroes = sortHeroesByCurrentCriteria(matchedHeroes)
-            let newCollection = Collection(name: tag.displayableName, characters: sortedHeroes)
-            collections.append(newCollection)
+        for index in 0..<collections.count {
+            collections[index].sort(by: sortCriteria)
         }
         return collections
-    }
-    
-    private func sortHeroesByCurrentCriteria(_ heroes: [OWHero]) -> [OWHero] {
-        switch sortCriteria {
-        case .alphabetically:
-            return heroes.sorted { $0.name < $1.name }
-        case .byCompositionValue:
-            return heroes.sorted { $0.compositionValue > $1.compositionValue }
-        }
     }
     
     private func getAvailableHeroes() -> [OWHero] {
         let allHeroes = OWHeroFactory().getHeroes()
         
-        guard let focusedSpot = session.focusedSpot else {
+        guard let lockedRole = session.focusedSpot?.wrappedValue.roleLock else {
             return allHeroes
         }
-        let spotLock = focusedSpot.wrappedValue.roleLock
-        
-        let filteredHeroes = allHeroes.filter {
-            $0.isAllowed(by: spotLock)
+        let filteredHeroes = allHeroes.filter { hero in
+            hero.isAllowed(by: lockedRole)
         }
         return filteredHeroes
     }

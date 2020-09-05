@@ -9,9 +9,15 @@ import SwiftUI
 
 class MatchSession: ObservableObject {
     
+    enum FocusedSpotType {
+        case allied
+        case enemy
+    }
+    
     @AppStorage("isAutoSwitchingEnabled") var isAutoSwitchingEnabled: Bool = true
     
-    @Published var focusedSpot: Binding<TeamSpot>?
+    @Published private(set) var focusedSpot: Binding<TeamSpot>?
+    @Published private(set) var focusedSpotType: FocusedSpotType?
     
     @Published var enemySpots: [TeamSpot]
     @Published var allySpots: [TeamSpot]
@@ -21,6 +27,18 @@ class MatchSession: ObservableObject {
     init() {
         enemySpots = TeamFactory.makeTeam(with: composition)
         allySpots = TeamFactory.makeTeam(with: composition)
+    }
+    
+    func setFocusedSpot(to newSpot: Binding<TeamSpot>?) {
+        focusedSpot = newSpot
+        switch newSpot {
+        case let enemySpot where enemySpots.contains { $0.id == enemySpot?.wrappedValue.id }:
+            focusedSpotType = .enemy
+        case let allySpot where allySpots.contains { $0.id == allySpot?.wrappedValue.id }:
+            focusedSpotType = .allied
+        default:
+            focusedSpotType = .none
+        }
     }
     
     func setHeroInFocusedSpot(to newHero: OWHero) {

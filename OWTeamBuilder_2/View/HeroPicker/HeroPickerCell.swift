@@ -10,6 +10,8 @@ import SwiftUI
 struct HeroPickerCell: View {
     
     @EnvironmentObject private var session: MatchSession
+    @AppStorage("isHeroDuplicationEnabled") var isHeroDuplicationEnabled: Bool = false
+
     
     private let outlineThickness: CGFloat = 7
     
@@ -17,9 +19,21 @@ struct HeroPickerCell: View {
         session.focusedSpot?.wrappedValue.hero == hero
     }
     
-    var isEnabled: Bool = true
+    private var canBePicked: Bool {
+        guard containsFocusedHero
+                || !isDuplicate
+                || isDuplicate && isHeroDuplicationEnabled else {
+            return false
+        }
+        return true
+    }
+    
+    private var overlayAlpha: Double {
+        return canBePicked ? 0 : 0.8
+    }
     
     var hero: OWHero
+    var isDuplicate: Bool = false
     
     var body: some View {
         ZStack {
@@ -32,11 +46,12 @@ struct HeroPickerCell: View {
                     .aspectRatio(HeroPortrait.aspect, contentMode: .fit)
             }
             
-            HeroPortrait(image: hero.portrait)
+            HeroPortrait(image: hero.portrait,
+                         overlay: AnyView(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)).opacity(overlayAlpha)))
                 .padding(0.5 * outlineThickness)
         }
         .onTapGesture {
-            guard isEnabled else {
+            guard canBePicked else {
                 return
             }
             session.setHeroInFocusedSpot(to: hero)
@@ -49,9 +64,9 @@ struct HeroPickerCell_Previews: PreviewProvider {
     static var previews: some View {
         let mei = OWHeroFactory().makeHero(id: "mei")
         let session = MatchSession()
-        session.focusedSpot = .constant(TeamSpot(hero: mei))
+        session.setFocusedSpot(to: .constant(TeamSpot(hero: mei)))
         
-        return HeroPickerCell(hero: mei!)
+        return HeroPickerCell(hero: mei!, isDuplicate: false)
             .environmentObject(session)
             .frame(maxHeight: 300)
             .background(Color(#colorLiteral(red: 0.3411764705882353, green: 0.6235294117647059, blue: 0.16862745098039217, alpha: 1.0)))

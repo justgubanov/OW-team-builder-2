@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HeroPickerScroll: View {
     
-    var availableHeroes: [OWHero]
+    var availableHeroes: [PickableHero]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: true) {
@@ -18,8 +18,9 @@ struct HeroPickerScroll: View {
                 Spacer()
                     .frame(width: 8)
                 
-                ForEach(availableHeroes, id: \.self) { hero in
-                    HeroPickerCell(hero: hero)
+                ForEach(availableHeroes) {
+                    HeroPickerCell(hero: $0.hero,
+                                   isDuplicate: !$0.isDuplicate)
                 }
             }
         }
@@ -28,7 +29,12 @@ struct HeroPickerScroll: View {
 
 struct HeroScrollView_Previews: PreviewProvider {
     static var previews: some View {
-        HeroPickerScroll(availableHeroes: OWHeroFactory().getHeroes())
+        let heroes = OWHeroFactory().getHeroes()
+        let pickableHeroes = heroes.map {
+            PickableHero(hero: $0, isDuplicate: true)
+        }
+        
+        return HeroPickerScroll(availableHeroes: pickableHeroes)
             .frame(maxHeight: 100)
             .background(Color(#colorLiteral(red: 0.3411764705882353, green: 0.6235294117647059, blue: 0.16862745098039217, alpha: 1.0)))
             .previewLayout(.sizeThatFits)

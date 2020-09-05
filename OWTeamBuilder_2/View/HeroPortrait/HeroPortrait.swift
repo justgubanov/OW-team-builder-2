@@ -12,16 +12,12 @@ struct HeroPortrait: View {
     static let aspect: CGFloat = 0.8
     
     var image: UIImage?
-    var isSelected: Bool = false
+    var overlay: AnyView = AnyView(Color.clear)
+    var background: AnyView = AnyView(HeroPortraitBackground())
     
     var body: some View {
         ZStack {
-            HeroPortraitBackground()
-            
-            if isSelected {
-                Color(#colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1))
-            }
-            
+            background
             if let heroPortrait = image {
                 GeometryReader { geometry in
                     Image(uiImage: heroPortrait)
@@ -30,6 +26,7 @@ struct HeroPortrait: View {
                         .frame(width: geometry.size.width)
                 }
             }
+            overlay
         }
         .clipShape(HeroPortraitMask())
         .aspectRatio(Self.aspect, contentMode: .fit)
