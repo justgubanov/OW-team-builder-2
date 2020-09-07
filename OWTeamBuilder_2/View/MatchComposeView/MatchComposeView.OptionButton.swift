@@ -28,7 +28,6 @@ extension MatchComposeView {
                 Image(systemName: "ellipsis.circle")
                     .font(.system(.body))
                     .imageScale(.large)
-                    .accentColor(.orange)
             }
         }
     }

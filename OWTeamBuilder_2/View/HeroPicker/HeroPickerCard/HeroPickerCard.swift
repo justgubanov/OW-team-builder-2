@@ -57,7 +57,7 @@ struct HeroPickerCard: View {
                     }
                     .frame(maxHeight: 400)
                     .background(
-                        Color(.secondarySystemGroupedBackground)
+                        Color(.tertiarySystemGroupedBackground)
                             .cornerRadius(10)
                             .shadow(radius: 30)
                     )

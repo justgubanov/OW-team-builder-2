@@ -34,7 +34,6 @@ struct SettingsView: View {
         Button("Close") {
             isPresented.toggle()
         }
-        .accentColor(.orange)
     }
     
     private var autoSwitchHeader: some View {

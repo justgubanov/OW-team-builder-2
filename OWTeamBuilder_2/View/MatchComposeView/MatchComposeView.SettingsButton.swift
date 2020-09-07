@@ -20,7 +20,6 @@ extension MatchComposeView {
                 Image(systemName: "gear")
                     .font(.system(.body))
                     .imageScale(.large)
-                    .accentColor(.orange)
             }
         }
     }

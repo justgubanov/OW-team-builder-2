@@ -17,7 +17,6 @@ extension HeroPickerCard {
             Button(action: close) {
                 Image(systemName: "xmark.circle.fill")
                     .resizable()
-                    .foregroundColor(.orange)
                     .frame(width: 40, height: 40)
             }
         }

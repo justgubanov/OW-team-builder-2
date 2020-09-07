@@ -23,7 +23,6 @@ extension HeroPickerCard {
             Button(action: action) {
                 Image(systemName: imageName)
                     .resizable()
-                    .foregroundColor(.orange)
                     .frame(width: 40, height: 40)
             }
         }
