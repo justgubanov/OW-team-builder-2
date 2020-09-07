@@ -19,11 +19,11 @@ struct MatchComposeView: View {
                 NavigationView {
                     Form {
                         Section {
-                            TeamComposingView(heroes: $session.enemySpots, title: "Enemy team")
+                            TeamComposingView(heroSpots: $session.enemySpots, teamTitle: "Enemy team")
                         }
                         
                         Section {
-                            TeamComposingView(heroes: $session.allySpots, title: "Your team")
+                            TeamComposingView(heroSpots: $session.allySpots, teamTitle: "Your team")
                         }
                     }
                     .navigationTitle(Text("Match composer"))

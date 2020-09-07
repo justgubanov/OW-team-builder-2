@@ -44,7 +44,7 @@ struct SettingsView: View {
         Text("Next cell will be selected automatically after you have set hero in current.")
     }
     private var heroDuplicationFooter: some View {
-        Text("When enabled, team can have any number of same hero")
+        Text("When enabled, you can add two or more copies of the hero to the team.")
     }
 }
 

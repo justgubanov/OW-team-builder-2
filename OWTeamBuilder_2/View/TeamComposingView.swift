@@ -11,27 +11,27 @@ struct TeamComposingView: View {
     
     @EnvironmentObject var session: MatchSession
     
-    @Binding var heroes: [TeamSpot]
+    @Binding var heroSpots: [TeamSpot]
     
     private var isTeamPopulated: Bool {
-        heroes.contains { spot in
+        heroSpots.contains { spot in
             spot.hero != nil
         }
     }
     
-    var title: String
+    var teamTitle: String
     
     var body: some View {
         VStack {
             HStack {
-                Text(title)
+                Text(teamTitle)
                     .bold()
                 Spacer()
             }
             
             HStack (spacing: -13) {
-                ForEach(0..<heroes.count, id: \.self) { index in
-                    SelectableHeroView(heroSpot: $heroes[index])
+                ForEach(0..<heroSpots.count, id: \.self) { index in
+                    SelectableHeroView(heroSpot: $heroSpots[index])
                 }
             }
         }
@@ -39,8 +39,8 @@ struct TeamComposingView: View {
             if isTeamPopulated {
                 Button(action: clearHeroes) {
                     HStack {
-                        Text("Clear")
-                        Image(systemName: "trash.fill")
+                        Text("Clear \(teamTitle.lowercased())")
+                        Image(systemName: "xmark")
                     }
                 }
             }
@@ -48,7 +48,9 @@ struct TeamComposingView: View {
     }
     
     private func clearHeroes() {
-        session.resetTeams()
+        for spot in heroSpots {
+            spot.hero = nil
+        }
     }
 }
 
@@ -62,7 +64,7 @@ struct TeamComposingView_Previews: PreviewProvider {
             return heroes
         }()
         
-        return TeamComposingView(heroes: .constant(heroes), title: "Your team")
+        return TeamComposingView(heroSpots: .constant(heroes), teamTitle: "Your team")
             .previewLayout(.sizeThatFits)
     }
 }
