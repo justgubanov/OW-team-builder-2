@@ -11,7 +11,6 @@ struct HeroPickerCell: View {
     
     @EnvironmentObject private var session: MatchSession
     @AppStorage("isHeroDuplicationEnabled") var isHeroDuplicationEnabled: Bool = false
-
     
     private let outlineThickness: CGFloat = 7
     
@@ -20,9 +19,9 @@ struct HeroPickerCell: View {
     }
     
     private var canBePicked: Bool {
-        guard containsFocusedHero
-                || !isDuplicate
-                || isDuplicate && isHeroDuplicationEnabled else {
+        let isLegitimateDuplicate = isDuplicate && isHeroDuplicationEnabled
+        
+        guard containsFocusedHero || !isDuplicate || isLegitimateDuplicate else {
             return false
         }
         return true
