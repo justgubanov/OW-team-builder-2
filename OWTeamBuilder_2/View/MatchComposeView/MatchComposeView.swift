@@ -36,7 +36,7 @@ struct MatchComposeView: View {
         }
         
         .sheet(isPresented: $showSettings) {
-            SettingsView()
+            SettingsView(isPresented: $showSettings)
         }
     }
 }

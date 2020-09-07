@@ -12,6 +12,8 @@ struct SettingsView: View {
     @AppStorage("isAutoSwitchingEnabled") var isAutoSwitchingEnabled: Bool = true
     @AppStorage("isHeroDuplicationEnabled") var isHeroDuplicationEnabled: Bool = false
     
+    @Binding var isPresented: Bool
+    
     var body: some View {
         NavigationView {
             Form {
@@ -24,7 +26,15 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle(Text("Settings"))
+            .navigationBarItems(trailing: closeButton)
         }
+    }
+    
+    private var closeButton: some View {
+        Button("Close") {
+            isPresented.toggle()
+        }
+        .accentColor(.orange)
     }
     
     private var autoSwitchHeader: some View {
@@ -41,6 +51,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(isPresented: .constant(true))
     }
 }
