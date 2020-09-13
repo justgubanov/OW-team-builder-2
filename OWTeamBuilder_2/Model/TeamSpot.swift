@@ -22,7 +22,7 @@ class TeamSpot: Identifiable {
     
     private(set) var id = UUID()
     
-    init(hero: OWHero? = nil) {
+    init(hero: OWHero? = nil, roleLock: RoleLock = .any) {
         self.hero = hero
     }
 }

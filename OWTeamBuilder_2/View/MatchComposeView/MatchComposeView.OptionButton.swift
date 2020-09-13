@@ -36,6 +36,7 @@ extension MatchComposeView {
 struct MatchComposeView_OptionButton_Previews: PreviewProvider {
     static var previews: some View {
         MatchComposeView.OptionButton()
+            .previewLayout(.sizeThatFits)
             .environmentObject(MatchSession())
     }
 }

@@ -65,10 +65,14 @@ struct HeroPickerCell_Previews: PreviewProvider {
         let session = MatchSession()
         session.setFocusedSpot(to: .constant(TeamSpot(hero: mei)))
         
-        return HeroPickerCell(hero: mei!, isDuplicate: false)
-            .environmentObject(session)
-            .frame(maxHeight: 300)
-            .background(Color(#colorLiteral(red: 0.3411764705882353, green: 0.6235294117647059, blue: 0.16862745098039217, alpha: 1.0)))
-            .previewLayout(.sizeThatFits)
+        return Group {
+            HeroPickerCell(hero: mei!, isDuplicate: false)
+                .environmentObject(session)
+            HeroPickerCell(hero: mei!, isDuplicate: false)
+            HeroPickerCell(hero: mei!, isDuplicate: true)
+        }
+        .frame(maxHeight: 300)
+        .background(Color(#colorLiteral(red: 0.3411764705882353, green: 0.6235294117647059, blue: 0.16862745098039217, alpha: 1.0)))
+        .previewLayout(.sizeThatFits)
     }
 }

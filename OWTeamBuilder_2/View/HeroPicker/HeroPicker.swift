@@ -25,6 +25,9 @@ struct HeroPicker: View {
             ForEach(collections, id: \.self) { collection in
                 VStack {
                     HStack {
+                        collection.icon
+                            .imageScale(.small)
+                        
                         Text(collection.name)
                             .bold()
                         Spacer()

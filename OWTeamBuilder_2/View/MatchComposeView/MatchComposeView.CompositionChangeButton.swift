@@ -49,7 +49,11 @@ extension MatchComposeView {
 
 struct MatchComposeView_CompositionChangeButton_Previews: PreviewProvider {
     static var previews: some View {
-        MatchComposeView.CompositionChangeButton(composition: .twoTwoTwo)
-            .environmentObject(MatchSession())
+        Group {
+            MatchComposeView.CompositionChangeButton(composition: .twoTwoTwo)
+            MatchComposeView.CompositionChangeButton(composition: .openRoles)
+        }
+        .previewLayout(.sizeThatFits)
+        .environmentObject(MatchSession())
     }
 }

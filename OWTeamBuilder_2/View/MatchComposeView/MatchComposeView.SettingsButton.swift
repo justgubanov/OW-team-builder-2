@@ -28,5 +28,6 @@ extension MatchComposeView {
 struct MatchComposeView_SettingsButton_Previews: PreviewProvider {
     static var previews: some View {
         MatchComposeView.SettingsButton(showSettings: .constant(true))
+            .previewLayout(.sizeThatFits)
     }
 }

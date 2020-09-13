@@ -5,7 +5,7 @@
 //  Created by Александр Губанов on 05.09.2020.
 //
 
-import Foundation
+import SwiftUI
 
 struct PickableHeroCollection: Hashable {
     
@@ -16,6 +16,7 @@ struct PickableHeroCollection: Hashable {
     }
     
     var name: String
+    var icon: Image?
     var pickableHeroes: [PickableHero]
     
     mutating func sort(by sortCriteria: SortCriteria) {
@@ -25,5 +26,10 @@ struct PickableHeroCollection: Hashable {
         case .compositionValue:
             pickableHeroes = pickableHeroes.sorted { $0.hero.compositionValue > $1.hero.compositionValue }
         }
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(pickableHeroes)
     }
 }

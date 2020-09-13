@@ -23,20 +23,33 @@ struct SelectableHeroView: View, Identifiable {
         session.focusedSpot?.wrappedValue.id == heroSpot.id
     }
     
-    var tap: some Gesture {
+    private var tap: some Gesture {
         TapGesture()
             .onEnded { _ in
                 session.setFocusedSpot(to: $heroSpot)
             }
     }
     
-    var doubleTap: some Gesture {
+    private var doubleTap: some Gesture {
         TapGesture(count: 2)
             .onEnded { _ in
                 withAnimation(.easeOut) {
                     heroSpot.hero = nil
                 }
             }
+    }
+    
+    private var roleImage: Image {
+        switch heroSpot.roleLock {
+        case .any:
+            return Image("flex.fill")
+        case .tank:
+            return Image("tank.fill")
+        case .damage:
+            return Image("damage.fill")
+        case .support:
+            return Image("support.fill")
+        }
     }
     
     var body: some View {
@@ -49,9 +62,9 @@ struct SelectableHeroView: View, Identifiable {
             }
             
             if isEmpty {
-                Text("+")
-                    .bold()
-                    .foregroundColor(.black)
+                roleImage
+                    .font(.title3)
+                    .foregroundColor(Color.black.opacity(0.57))
             }
         }
         .gesture(tap)
@@ -65,6 +78,7 @@ struct SelectableHeroView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             SelectableHeroView(heroSpot: .constant(TeamSpot()))
+            SelectableHeroView(heroSpot: .constant(TeamSpot(hero: nil, roleLock: .damage)))
             SelectableHeroView(heroSpot: .constant(TeamSpot(hero: mei)))
         }
         .previewLayout(.sizeThatFits)

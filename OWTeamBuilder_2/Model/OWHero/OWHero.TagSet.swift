@@ -5,7 +5,7 @@
 //  Created by Александр Губанов on 23.08.2020.
 //
 
-import Foundation
+import SwiftUI
 
 extension OWHero {
     
@@ -37,6 +37,19 @@ extension OWHero {
                 return "Tier III"
             default:
                 return "Unknown"
+            }
+        }
+        
+        var icon: Image? {
+            switch self.rawValue {
+            case TagSet.tank.rawValue:
+                return Image("tank.fill")
+            case TagSet.damage.rawValue:
+                return Image("damage.fill")
+            case TagSet.support.rawValue:
+                return Image("support.fill")
+            default:
+                return nil
             }
         }
     }

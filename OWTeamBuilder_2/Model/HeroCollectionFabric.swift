@@ -65,6 +65,8 @@ class HeroCollectionFabric {
         guard !selectableHeroes.isEmpty else {
             return nil
         }
-        return PickableHeroCollection(name: allowedHeroTags.displayableName, pickableHeroes: selectableHeroes)
+        return PickableHeroCollection(name: allowedHeroTags.displayableName,
+                                      icon: allowedHeroTags.icon,
+                                      pickableHeroes: selectableHeroes)
     }
 }
