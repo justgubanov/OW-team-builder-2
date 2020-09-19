@@ -14,9 +14,7 @@ struct OWHero: Hashable {
     var idString: String
 
     var tags: TagSet
-    
-    var compositionValue: Int = Int.random(in: 0..<1000)
-    
+        
     func hash(into hasher: inout Hasher) {
         hasher.combine(idString)
     }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PickableHeroCollection: Hashable {
+struct PickableHeroCollection: Identifiable {
     
     enum SortCriteria {
         
@@ -18,18 +18,21 @@ struct PickableHeroCollection: Hashable {
     var name: String
     var icon: Image?
     var pickableHeroes: [PickableHero]
+    var session: MatchSession
+    
+    let id = UUID()
     
     mutating func sort(by sortCriteria: SortCriteria) {
         switch sortCriteria {
         case .name:
             pickableHeroes = pickableHeroes.sorted { $0.hero.name < $1.hero.name }
         case .compositionValue:
-            pickableHeroes = pickableHeroes.sorted { $0.hero.compositionValue > $1.hero.compositionValue }
+            pickableHeroes = pickableHeroes.sorted { first, second in
+                let analyser = CompositionAnalyser(session: session)
+                let valueOne = analyser.getCompositionValue(of: first.hero)
+                let valueTwo = analyser.getCompositionValue(of: second.hero)
+                return valueOne > valueTwo
+            }
         }
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-        hasher.combine(pickableHeroes)
     }
 }

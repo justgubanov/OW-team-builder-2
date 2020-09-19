@@ -9,19 +9,39 @@ import Foundation
 
 class HeroCollectionFabric {
     
+    private enum PreferenceClass: CaseIterable {
+        
+        case preferred
+        case situational
+        case others
+        
+        var displayableName: String {
+            switch self {
+            case .preferred:
+                return "Preferred"
+            case .situational:
+                return "Situational"
+            case .others:
+                return "Others"
+            }
+        }
+        
+        var pickPriorityRange: Range<Int> {
+            switch self {
+            case .preferred:
+                return 700..<1000
+            case .situational:
+                return 400..<700
+            case .others:
+                return 0..<400
+            }
+        }
+    }
+    
     enum GroupCriteria {
         
         case queueRole
         case tierValue
-        
-        fileprivate var values: [OWHero.TagSet] {
-            switch self {
-            case .queueRole:
-                return [.tank, .damage, .support]
-            case .tierValue:
-                return [.tierOne, .tierTwo, .tierThree]
-            }
-        }
     }
     
     var matchSession: MatchSession
@@ -31,42 +51,60 @@ class HeroCollectionFabric {
     }
     
     func makeCollections(from heroes: [OWHero], groupingCriteria: GroupCriteria) -> [PickableHeroCollection] {
-        var collections = [PickableHeroCollection]()
-        
-        for tagSet in groupingCriteria.values {
-            if let namedCollection = createCollection(selectingHeroesFrom: heroes, allowedHeroTags: tagSet) {
-                collections.append(namedCollection)
-            }
+        switch groupingCriteria {
+        case .queueRole:
+            return makeCollectionsForEachRole(pullHeroes: heroes)
+        case .tierValue:
+            return makeCollectionsForPickPriority(pullHeroes: heroes)
         }
-        return collections
     }
     
-    private func createCollection(selectingHeroesFrom heroes: [OWHero], allowedHeroTags: OWHero.TagSet) -> PickableHeroCollection? {
-        let matchedHeroes = heroes.filter { hero in
-            hero.tags.contains(allowedHeroTags)
+    private func makeCollectionsForEachRole(pullHeroes: [OWHero]) -> [PickableHeroCollection] {
+        let roleTags: [OWHero.TagSet] = [.tank, .damage, .support]
+        
+        return roleTags.compactMap { roleTag in
+            let heroesOfRole = pullHeroes.filter { $0.tags.contains(roleTag) }
+            let selectableHeroes = mapToPickable(heroes: heroesOfRole)
+            return PickableHeroCollection(name: roleTag.displayableName,
+                                          icon: roleTag.icon,
+                                          pickableHeroes: selectableHeroes,
+                                          session: matchSession)
+        }
+    }
+    
+    private func makeCollectionsForPickPriority(pullHeroes: [OWHero]) -> [PickableHeroCollection] {
+        let analyser = CompositionAnalyser(session: matchSession)
+        let heroTierPriority = pullHeroes.map { hero in
+            return (hero: hero, tierPriority: analyser.getCompositionValue(of: hero))
         }
         
-        let selectableHeroes: [PickableHero] = matchedHeroes.map { hero in
-            var isDuplicate = true
+        return PreferenceClass.allCases.compactMap { preferenceClass in
+            let heroes = heroTierPriority.filter { _, priorityValue in
+                preferenceClass.pickPriorityRange.contains(priorityValue)
+            }.map { $0.hero }
             
-            if matchSession.focusedSpotType == .some(.allied)
-                && matchSession.allySpots.contains(where: { $0.hero == hero }) {
-                isDuplicate = false
+            let selectableHeroes = mapToPickable(heroes: heroes)
+            guard !selectableHeroes.isEmpty else {
+                return nil
             }
+            return PickableHeroCollection(name: preferenceClass.displayableName,
+                                          pickableHeroes: selectableHeroes,
+                                          session: matchSession)
+        }
+    }
+    
+    private func mapToPickable(heroes: [OWHero]) -> [PickableHero] {
+        return heroes.map { hero in
+            let isEnemySpotSelected = matchSession.focusedSpotType == .some(.enemy)
+            let isAlliedSpotSelected = matchSession.focusedSpotType == .some(.allied)
+            let isAlreadyInEnemyTeam = matchSession.enemySpots.contains { $0.hero == hero }
+            let isAlreadyInAlliedTeam = matchSession.allySpots.contains { $0.hero == hero }
             
-            if matchSession.focusedSpotType == .some(.enemy)
-                && matchSession.enemySpots.contains(where: { $0.hero == hero }) {
-                isDuplicate = false
+            if (isEnemySpotSelected && isAlreadyInEnemyTeam) || (isAlliedSpotSelected && isAlreadyInAlliedTeam) {
+                return PickableHero(hero: hero, isDuplicate: false)
+            } else {
+                return PickableHero(hero: hero, isDuplicate: true)
             }
-            
-            return PickableHero(hero: hero, isDuplicate: isDuplicate)
         }
-        
-        guard !selectableHeroes.isEmpty else {
-            return nil
-        }
-        return PickableHeroCollection(name: allowedHeroTags.displayableName,
-                                      icon: allowedHeroTags.icon,
-                                      pickableHeroes: selectableHeroes)
     }
 }

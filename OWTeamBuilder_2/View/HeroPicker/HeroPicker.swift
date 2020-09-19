@@ -11,18 +11,12 @@ struct HeroPicker: View {
     
     @EnvironmentObject private var session: MatchSession
     
-    private var heroesToSelectFrom: [OWHero] {
-        var heroes = getAvailableHeroes()
-        TierTagAssigner.assignRanks(to: &heroes)
-        return heroes
-    }
-    
     var groupCriteria: HeroCollectionFabric.GroupCriteria = .tierValue
     var sortCriteria: PickableHeroCollection.SortCriteria = .name
     
     var body: some View {
         VStack(spacing: 40) {
-            ForEach(collections, id: \.self) { collection in
+            ForEach(collections) { collection in
                 VStack {
                     HStack {
                         collection.icon
@@ -43,7 +37,7 @@ struct HeroPicker: View {
     
     private var collections: [PickableHeroCollection] {
         let collectionFabric = HeroCollectionFabric(session: session)
-        var collections = collectionFabric.makeCollections(from: heroesToSelectFrom, groupingCriteria: groupCriteria)
+        var collections = collectionFabric.makeCollections(from: availableHeroes, groupingCriteria: groupCriteria)
         
         for index in 0..<collections.count {
             collections[index].sort(by: sortCriteria)
@@ -51,7 +45,7 @@ struct HeroPicker: View {
         return collections
     }
     
-    private func getAvailableHeroes() -> [OWHero] {
+    private var availableHeroes: [OWHero] {
         let allHeroes = OWHeroFactory().getHeroes()
         
         guard let lockedRole = session.focusedSpot?.wrappedValue.roleLock else {

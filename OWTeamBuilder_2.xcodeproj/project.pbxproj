@@ -33,7 +33,7 @@
 		FA9EFA7F24F2D5C200F46615 /* HeroPickerCard.CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA7E24F2D5C200F46615 /* HeroPickerCard.CloseButton.swift */; };
 		FA9EFA8124F2D62D00F46615 /* HeroPickerCard.SortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA8024F2D62D00F46615 /* HeroPickerCard.SortButton.swift */; };
 		FA9EFA8324F2E63100F46615 /* HeroPickerCard.GroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA8224F2E63100F46615 /* HeroPickerCard.GroupButton.swift */; };
-		FA9EFA8524F2EFE200F46615 /* TierTagAssigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA8424F2EFE200F46615 /* TierTagAssigner.swift */; };
+		FA9EFA8524F2EFE200F46615 /* CompositionAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA8424F2EFE200F46615 /* CompositionAnalyser.swift */; };
 		FAAEDB0C2503BF69000A122A /* PickableHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEDB0B2503BF69000A122A /* PickableHero.swift */; };
 		FAAEDB0E2503D04F000A122A /* HeroCollectionFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEDB0D2503D04F000A122A /* HeroCollectionFabric.swift */; };
 		FABD7F8124CDED9900B6029A /* TeamSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD7F8024CDED9900B6029A /* TeamSpot.swift */; };
@@ -94,7 +94,7 @@
 		FA9EFA7E24F2D5C200F46615 /* HeroPickerCard.CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCard.CloseButton.swift; sourceTree = "<group>"; };
 		FA9EFA8024F2D62D00F46615 /* HeroPickerCard.SortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCard.SortButton.swift; sourceTree = "<group>"; };
 		FA9EFA8224F2E63100F46615 /* HeroPickerCard.GroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCard.GroupButton.swift; sourceTree = "<group>"; };
-		FA9EFA8424F2EFE200F46615 /* TierTagAssigner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TierTagAssigner.swift; sourceTree = "<group>"; };
+		FA9EFA8424F2EFE200F46615 /* CompositionAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionAnalyser.swift; sourceTree = "<group>"; };
 		FAAEDB0B2503BF69000A122A /* PickableHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickableHero.swift; sourceTree = "<group>"; };
 		FAAEDB0D2503D04F000A122A /* HeroCollectionFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionFabric.swift; sourceTree = "<group>"; };
 		FABD7F8024CDED9900B6029A /* TeamSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSpot.swift; sourceTree = "<group>"; };
@@ -252,7 +252,7 @@
 				FA424CD024FB7F7E001E5AE2 /* OWTeam.swift */,
 				FABD7F8024CDED9900B6029A /* TeamSpot.swift */,
 				FA18775E24F258B100496D2E /* TeamFactory.swift */,
-				FA9EFA8424F2EFE200F46615 /* TierTagAssigner.swift */,
+				FA9EFA8424F2EFE200F46615 /* CompositionAnalyser.swift */,
 				FAAEDB0B2503BF69000A122A /* PickableHero.swift */,
 				FAF6D90E2503EDBC006B2530 /* PickableHeroCollection.swift */,
 				FAAEDB0D2503D04F000A122A /* HeroCollectionFabric.swift */,
@@ -410,7 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA9EFA8524F2EFE200F46615 /* TierTagAssigner.swift in Sources */,
+				FA9EFA8524F2EFE200F46615 /* CompositionAnalyser.swift in Sources */,
 				FA75D26B24BA3029004F5F9F /* ContentView.swift in Sources */,
 				FADF0F8F24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift in Sources */,
 				FA75D29E24BA374E004F5F9F /* SelectableHeroView.swift in Sources */,
