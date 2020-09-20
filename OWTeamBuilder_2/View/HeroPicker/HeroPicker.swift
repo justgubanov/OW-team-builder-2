@@ -48,7 +48,7 @@ struct HeroPicker: View {
     private var availableHeroes: [OWHero] {
         let allHeroes = OWHeroFactory().getHeroes()
         
-        guard let lockedRole = session.focusedSpot?.wrappedValue.roleLock else {
+        guard let lockedRole = session.focusedSpot?.roleLock else {
             return allHeroes
         }
         let filteredHeroes = allHeroes.filter { hero in

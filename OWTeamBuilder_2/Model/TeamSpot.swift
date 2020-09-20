@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TeamSpot: Identifiable {
+class TeamSpot: ObservableObject, Identifiable {
     
     enum RoleLock {
         
@@ -17,8 +17,8 @@ class TeamSpot: Identifiable {
         case support
     }
     
-    var hero: OWHero?
-    var roleLock: RoleLock = .any
+    @Published var hero: OWHero?
+    @Published var roleLock: RoleLock = .any
     
     private(set) var id = UUID()
     

@@ -15,7 +15,7 @@ struct HeroPickerCell: View {
     private let outlineThickness: CGFloat = 7
     
     private var containsFocusedHero: Bool {
-        session.focusedSpot?.wrappedValue.hero == hero
+        session.focusedSpot?.hero == hero
     }
     
     private var canBePicked: Bool {
@@ -63,7 +63,7 @@ struct HeroPickerCell_Previews: PreviewProvider {
     static var previews: some View {
         let mei = OWHeroFactory().makeHero(id: "mei")
         let session = MatchSession()
-        session.setFocusedSpot(to: .constant(TeamSpot(hero: mei)))
+        session.setFocusedSpot(to: TeamSpot(hero: mei))
         
         return Group {
             HeroPickerCell(hero: mei!, isDuplicate: false)

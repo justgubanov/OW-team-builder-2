@@ -16,7 +16,7 @@ class MatchSession: ObservableObject {
     
     @AppStorage("isAutoSwitchingEnabled") var isAutoSwitchingEnabled: Bool = true
     
-    @Published private(set) var focusedSpot: Binding<TeamSpot>?
+    @Published private(set) var focusedSpot: TeamSpot?
     @Published private(set) var focusedSpotType: FocusedSpotType?
     
     @Published var enemySpots: [TeamSpot]
@@ -29,12 +29,12 @@ class MatchSession: ObservableObject {
         allySpots = TeamFactory.makeTeam(with: composition)
     }
     
-    func setFocusedSpot(to newSpot: Binding<TeamSpot>?) {
+    func setFocusedSpot(to newSpot: TeamSpot?) {
         focusedSpot = newSpot
         switch newSpot {
-        case let enemySpot where enemySpots.contains { $0.id == enemySpot?.wrappedValue.id }:
+        case let enemySpot where enemySpots.contains { $0.id == enemySpot?.id }:
             focusedSpotType = .enemy
-        case let allySpot where allySpots.contains { $0.id == allySpot?.wrappedValue.id }:
+        case let allySpot where allySpots.contains { $0.id == allySpot?.id }:
             focusedSpotType = .allied
         default:
             focusedSpotType = .none
@@ -42,7 +42,7 @@ class MatchSession: ObservableObject {
     }
     
     func setHeroInFocusedSpot(to newHero: OWHero) {
-        focusedSpot?.wrappedValue.hero = newHero
+        focusedSpot?.hero = newHero
         
         guard isAutoSwitchingEnabled else {
             objectWillChange.send()
@@ -62,18 +62,18 @@ class MatchSession: ObservableObject {
     }
     
     private func moveToNextSpot() {
-        guard let focusedSpotId = focusedSpot?.wrappedValue.id else {
+        guard let focusedSpotId = focusedSpot?.id else {
             return
         }
         
         if let positionInEnemyTeam = enemySpots.firstIndex(where: { $0.id == focusedSpotId }),
            let nextSpot = getNextSpot(from: enemySpots, after: positionInEnemyTeam) {
-            focusedSpot = .constant(nextSpot)
+            focusedSpot = nextSpot
         }
         
         if let positionInAllyTeam = allySpots.firstIndex(where: { $0.id == focusedSpotId }),
            let nextSpot = getNextSpot(from: allySpots, after: positionInAllyTeam) {
-            focusedSpot = .constant(nextSpot)
+            focusedSpot = nextSpot
         }
     }
     

@@ -15,7 +15,7 @@ struct HeroPickerCard: View {
     @State private var groupsByRole: Bool = false
     
     private var isRoleLocked: Bool {
-        return session.focusedSpot?.wrappedValue.roleLock != .any
+        return session.focusedSpot?.roleLock != .any
     }
     
     private var sortCriteria: PickableHeroCollection.SortCriteria {

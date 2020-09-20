@@ -20,13 +20,13 @@ struct SelectableHeroView: View, Identifiable {
     }
     
     private var isSelected: Bool {
-        session.focusedSpot?.wrappedValue.id == heroSpot.id
+        session.focusedSpot?.id == heroSpot.id
     }
     
     private var tap: some Gesture {
         TapGesture()
             .onEnded { _ in
-                session.setFocusedSpot(to: $heroSpot)
+                session.setFocusedSpot(to: heroSpot)
             }
     }
     
