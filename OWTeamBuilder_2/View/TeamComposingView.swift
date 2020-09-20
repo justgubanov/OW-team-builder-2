@@ -48,6 +48,7 @@ struct TeamComposingView: View {
     }
     
     private func clearHeroes() {
+        session.objectWillChange.send()
         for spot in heroSpots {
             spot.hero = nil
         }
