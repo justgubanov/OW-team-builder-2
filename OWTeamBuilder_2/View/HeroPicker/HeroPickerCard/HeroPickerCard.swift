@@ -11,8 +11,13 @@ struct HeroPickerCard: View {
     
     @EnvironmentObject private var session: MatchSession
     
+    @Binding private var isPresented: Bool
     @State private var sortsByRank: Bool = false
     @State private var groupsByRole: Bool = false
+    
+    init(isPresented: Binding<Bool>) {
+        self._isPresented = isPresented
+    }
     
     private var isRoleLocked: Bool {
         return session.focusedSpot?.roleLock != .any
@@ -29,46 +34,33 @@ struct HeroPickerCard: View {
         return groupsByRole ? .queueRole : .tierValue
     }
     
-    private var isPresented: Bool {
-        session.focusedSpot != nil
-    }
-    
     var body: some View {
-        Group {
-            if isPresented {
-                VStack {
-                    Spacer()
-                    
-                    HStack {
-                        Spacer()
-                        
-                        if !isRoleLocked {
-                            GroupButton(isGroupedByRole: $groupsByRole, action: toggleGrouping)
-                        }
-                        SortButton(isSortedByRank: $sortsByRank, action: toggleSort)
-                        CloseButton(action: closePicker)
-                    }
-                    
-                    VStack {
-                        HeroPicker(groupCriteria: groupCriteria, sortCriteria: sortCriteria)
-                        
-                        Spacer()
-                            .frame(height: 20)
-                    }
-                    .frame(maxHeight: 400)
-                    .background(
-                        Color(.tertiarySystemGroupedBackground)
-                            .cornerRadius(10)
-                            .shadow(radius: 30)
-                    )
+        VStack {
+            HStack {
+                Spacer()
+                
+                if !isRoleLocked {
+                    GroupButton(isGroupedByRole: $groupsByRole, action: toggleGrouping)
                 }
-                .edgesIgnoringSafeArea(.bottom)
+                SortButton(isSortedByRank: $sortsByRank, action: toggleSort)
+                CloseButton(action: closePicker)
             }
+            
+            HeroPicker(groupCriteria: groupCriteria, sortCriteria: sortCriteria)
+            
+            Spacer()
+                .frame(height: 20)
         }
+        .background(
+            Color(.tertiarySystemGroupedBackground)
+                .cornerRadius(10)
+                .shadow(radius: 30)
+        )
     }
     
     private func closePicker() {
         session.setFocusedSpot(to: nil)
+        isPresented = false
     }
     
     private func toggleSort() {
@@ -82,6 +74,6 @@ struct HeroPickerCard: View {
 
 struct HeroPickerCard_Previews: PreviewProvider {
     static var previews: some View {
-        HeroPickerCard()
+        HeroPickerCard(isPresented: .constant(true))
     }
 }
