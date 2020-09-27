@@ -14,15 +14,37 @@ struct MatchComposeView: View {
     @State var showSettings: Bool = false
     @State var showPicker: Bool = false
     
+    private var focusedTeamIndex: Int {
+        switch session.focusedSpotType {
+        case .enemy:
+            return 0
+        case .allied:
+            return 1
+        case .none:
+            return 2
+        }
+    }
+    
     var body: some View {
         NavigationView {
-            Form {
-                Section {
-                    TeamComposingView(heroSpots: $session.enemySpots, teamTitle: "Enemy team")
+            ScrollViewReader { reader in
+                Form {
+                    Section {
+                        TeamComposingView(heroSpots: $session.enemySpots, teamTitle: "Enemy team")
+                    }
+                    .id(0)
+                    
+                    Section {
+                        TeamComposingView(heroSpots: $session.allySpots, teamTitle: "Your team")
+                    }
+                    .id(1)
                 }
-                
-                Section {
-                    TeamComposingView(heroSpots: $session.allySpots, teamTitle: "Your team")
+                .onChange(of: session.focusedSpot) { focusedSpot in
+                    showPicker = focusedSpot != nil
+                    withAnimation { reader.scrollTo(focusedTeamIndex) }
+                }
+                .onChange(of: session.focusedSpot?.hero) { _ in
+                    withAnimation { reader.scrollTo(focusedTeamIndex) }
                 }
             }
             .navigationTitle(Text("Match composer"))
@@ -33,9 +55,6 @@ struct MatchComposeView: View {
             .sheet(isPresented: $showSettings) {
                 SettingsView(isPresented: $showSettings)
             }
-        }
-        .onChange(of: session.focusedSpot) { focusedSpot in
-            showPicker = focusedSpot != nil
         }
     }
 }
