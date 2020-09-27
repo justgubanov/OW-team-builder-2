@@ -59,7 +59,6 @@ struct HeroPickerCard: View {
     }
     
     private func closePicker() {
-        session.setFocusedSpot(to: nil)
         isPresented = false
     }
     
