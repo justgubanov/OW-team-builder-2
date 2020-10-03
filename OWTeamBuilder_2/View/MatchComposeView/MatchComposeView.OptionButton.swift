@@ -14,14 +14,14 @@ extension MatchComposeView {
         var body: some View {
             Menu {
                 Menu {
-                    Text("Select new composition")
+                    Text("Choose composition:")
+                    
                     CompositionChangeButton(composition: .twoTwoTwo)
-                    Divider()
-                    CompositionChangeButton(composition: .openRoles)
+                    CompositionChangeButton(composition: .flexibleRoles)
                 } label: {
                     HStack {
                         Text("Reset both teams")
-                        Image(systemName: "square.and.pencil")
+                        Image(systemName: "arrow.3.trianglepath")
                     }
                 }
             } label: {

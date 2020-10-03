@@ -36,14 +36,13 @@ struct TeamComposingView: View {
             }
         }
         .contextMenu {
-            if isTeamPopulated {
-                Button(action: clearHeroes) {
-                    HStack {
-                        Text("Clear \(teamTitle.lowercased())")
-                        Image(systemName: "xmark")
-                    }
+            Button(action: clearHeroes) {
+                HStack {
+                    Text("Clear \(teamTitle.lowercased())")
+                    Image(systemName: "xmark")
                 }
             }
+            .disabled(!isTeamPopulated)
         }
     }
     

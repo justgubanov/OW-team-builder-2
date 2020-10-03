@@ -11,7 +11,7 @@ class OWTeam {
     
     enum Composition {
         
-        case openRoles
+        case flexibleRoles
         case twoTwoTwo
     }
 }

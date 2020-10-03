@@ -11,14 +11,14 @@ class TeamFactory {
     
     static func makeTeam(with composition: OWTeam.Composition) -> [TeamSpot] {
         switch composition {
-        case .openRoles:
-            return makeFreeTeam(of: 6)
+        case .flexibleRoles:
+            return makeTeam(of: 6)
         case .twoTwoTwo:
             return makeTwoTwoTwoTeam()
         }
     }
     
-    private static func makeFreeTeam(of number: Int) -> [TeamSpot] {
+    private static func makeTeam(of number: Int) -> [TeamSpot] {
         var spots: [TeamSpot] = []
         for _ in 0..<number {
             let newSpot = TeamSpot()
