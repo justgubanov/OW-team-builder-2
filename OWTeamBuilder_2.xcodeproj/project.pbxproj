@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0A33AD252845B000B84993 /* PickerGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A33AC252845B000B84993 /* PickerGroupButton.swift */; };
 		FA18775D24F2537800496D2E /* OWHero.TagSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18775C24F2537800496D2E /* OWHero.TagSet.swift */; };
 		FA18775F24F258B100496D2E /* TeamFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18775E24F258B100496D2E /* TeamFactory.swift */; };
 		FA424CD124FB7F7E001E5AE2 /* OWTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA424CD024FB7F7E001E5AE2 /* OWTeam.swift */; };
 		FA424CD324FB8192001E5AE2 /* MatchComposeView.OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA424CD224FB8192001E5AE2 /* MatchComposeView.OptionButton.swift */; };
 		FA424CD524FBB039001E5AE2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA424CD424FBB039001E5AE2 /* SettingsView.swift */; };
 		FA424CD924FBBBA2001E5AE2 /* MatchComposeView.SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA424CD824FBBBA1001E5AE2 /* MatchComposeView.SettingsButton.swift */; };
+		FA5D25AA25212426003406C6 /* XmarkCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D25A925212426003406C6 /* XmarkCloseButton.swift */; };
 		FA62198124F45CFF00491C03 /* MatchComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62198024F45CFF00491C03 /* MatchComposeView.swift */; };
 		FA62198324F45D4E00491C03 /* MatchComposeView.CompositionChangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62198224F45D4E00491C03 /* MatchComposeView.CompositionChangeButton.swift */; };
 		FA68529B251F404B00E9DECC /* HeroPickerModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68529A251F404B00E9DECC /* HeroPickerModifier.swift */; };
@@ -31,14 +33,13 @@
 		FA75D2A524BA48A0004F5F9F /* TeamComposingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */; };
 		FA75D2A724BA5192004F5F9F /* HeroPortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A624BA5192004F5F9F /* HeroPortrait.swift */; };
 		FA9EFA7D24F280CC00F46615 /* HeroPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA7C24F280CC00F46615 /* HeroPickerCell.swift */; };
-		FA9EFA7F24F2D5C200F46615 /* HeroPickerCard.CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA7E24F2D5C200F46615 /* HeroPickerCard.CloseButton.swift */; };
-		FA9EFA8124F2D62D00F46615 /* HeroPickerCard.SortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA8024F2D62D00F46615 /* HeroPickerCard.SortButton.swift */; };
-		FA9EFA8324F2E63100F46615 /* HeroPickerCard.GroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA8224F2E63100F46615 /* HeroPickerCard.GroupButton.swift */; };
 		FA9EFA8524F2EFE200F46615 /* CompositionAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA8424F2EFE200F46615 /* CompositionAnalyser.swift */; };
 		FAAEDB0C2503BF69000A122A /* PickableHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEDB0B2503BF69000A122A /* PickableHero.swift */; };
 		FAAEDB0E2503D04F000A122A /* HeroCollectionFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEDB0D2503D04F000A122A /* HeroCollectionFabric.swift */; };
 		FABD7F8124CDED9900B6029A /* TeamSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD7F8024CDED9900B6029A /* TeamSpot.swift */; };
 		FADF0F8F24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF0F8E24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift */; };
+		FAE4FBC5252440EA00F94C1A /* PickerOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4FBC4252440EA00F94C1A /* PickerOptionButton.swift */; };
+		FAE869CE25227D9700B448D7 /* PickerSortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE869CD25227D9700B448D7 /* PickerSortButton.swift */; };
 		FAF3387124C4D230007BAA9B /* MatchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3387024C4D22F007BAA9B /* MatchSession.swift */; };
 		FAF3387324C4EB0A007BAA9B /* HeroPickerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */; };
 		FAF6D90F2503EDBC006B2530 /* PickableHeroCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6D90E2503EDBC006B2530 /* PickableHeroCollection.swift */; };
@@ -63,12 +64,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA0A33AC252845B000B84993 /* PickerGroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerGroupButton.swift; sourceTree = "<group>"; };
 		FA18775C24F2537800496D2E /* OWHero.TagSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWHero.TagSet.swift; sourceTree = "<group>"; };
 		FA18775E24F258B100496D2E /* TeamFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamFactory.swift; sourceTree = "<group>"; };
 		FA424CD024FB7F7E001E5AE2 /* OWTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWTeam.swift; sourceTree = "<group>"; };
 		FA424CD224FB8192001E5AE2 /* MatchComposeView.OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchComposeView.OptionButton.swift; sourceTree = "<group>"; };
 		FA424CD424FBB039001E5AE2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FA424CD824FBBBA1001E5AE2 /* MatchComposeView.SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchComposeView.SettingsButton.swift; sourceTree = "<group>"; };
+		FA5D25A925212426003406C6 /* XmarkCloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmarkCloseButton.swift; sourceTree = "<group>"; };
 		FA62198024F45CFF00491C03 /* MatchComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchComposeView.swift; sourceTree = "<group>"; };
 		FA62198224F45D4E00491C03 /* MatchComposeView.CompositionChangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchComposeView.CompositionChangeButton.swift; sourceTree = "<group>"; };
 		FA68529A251F404B00E9DECC /* HeroPickerModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerModifier.swift; sourceTree = "<group>"; };
@@ -93,14 +96,13 @@
 		FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamComposingView.swift; sourceTree = "<group>"; };
 		FA75D2A624BA5192004F5F9F /* HeroPortrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPortrait.swift; sourceTree = "<group>"; };
 		FA9EFA7C24F280CC00F46615 /* HeroPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCell.swift; sourceTree = "<group>"; };
-		FA9EFA7E24F2D5C200F46615 /* HeroPickerCard.CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCard.CloseButton.swift; sourceTree = "<group>"; };
-		FA9EFA8024F2D62D00F46615 /* HeroPickerCard.SortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCard.SortButton.swift; sourceTree = "<group>"; };
-		FA9EFA8224F2E63100F46615 /* HeroPickerCard.GroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCard.GroupButton.swift; sourceTree = "<group>"; };
 		FA9EFA8424F2EFE200F46615 /* CompositionAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionAnalyser.swift; sourceTree = "<group>"; };
 		FAAEDB0B2503BF69000A122A /* PickableHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickableHero.swift; sourceTree = "<group>"; };
 		FAAEDB0D2503D04F000A122A /* HeroCollectionFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionFabric.swift; sourceTree = "<group>"; };
 		FABD7F8024CDED9900B6029A /* TeamSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSpot.swift; sourceTree = "<group>"; };
 		FADF0F8E24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension_SafeSubscript.swift; sourceTree = "<group>"; };
+		FAE4FBC4252440EA00F94C1A /* PickerOptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerOptionButton.swift; sourceTree = "<group>"; };
+		FAE869CD25227D9700B448D7 /* PickerSortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSortButton.swift; sourceTree = "<group>"; };
 		FAF3387024C4D22F007BAA9B /* MatchSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSession.swift; sourceTree = "<group>"; };
 		FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCard.swift; sourceTree = "<group>"; };
 		FAF6D90E2503EDBC006B2530 /* PickableHeroCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickableHeroCollection.swift; sourceTree = "<group>"; };
@@ -138,7 +140,7 @@
 				FA75D29824BA374B004F5F9F /* HeroPicker.swift */,
 				FA9EFA7C24F280CC00F46615 /* HeroPickerCell.swift */,
 				FA75D29B24BA374D004F5F9F /* HeroPickerScroll.swift */,
-				FA9EFA8624F2F11600F46615 /* HeroPickerCard */,
+				FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */,
 			);
 			path = HeroPicker;
 			sourceTree = "<group>";
@@ -244,6 +246,10 @@
 				FA18776024F2598500496D2E /* HeroPicker */,
 				FA18776124F25A5100496D2E /* HeroPortrait */,
 				FA68529A251F404B00E9DECC /* HeroPickerModifier.swift */,
+				FA5D25A925212426003406C6 /* XmarkCloseButton.swift */,
+				FAE869CD25227D9700B448D7 /* PickerSortButton.swift */,
+				FA0A33AC252845B000B84993 /* PickerGroupButton.swift */,
+				FAE4FBC4252440EA00F94C1A /* PickerOptionButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -271,17 +277,6 @@
 				FADF0F8E24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift */,
 			);
 			path = Extra;
-			sourceTree = "<group>";
-		};
-		FA9EFA8624F2F11600F46615 /* HeroPickerCard */ = {
-			isa = PBXGroup;
-			children = (
-				FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */,
-				FA9EFA7E24F2D5C200F46615 /* HeroPickerCard.CloseButton.swift */,
-				FA9EFA8024F2D62D00F46615 /* HeroPickerCard.SortButton.swift */,
-				FA9EFA8224F2E63100F46615 /* HeroPickerCard.GroupButton.swift */,
-			);
-			path = HeroPickerCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,27 +413,28 @@
 				FADF0F8F24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift in Sources */,
 				FA75D29E24BA374E004F5F9F /* SelectableHeroView.swift in Sources */,
 				FA75D2A124BA375D004F5F9F /* OWHero.swift in Sources */,
-				FA9EFA7F24F2D5C200F46615 /* HeroPickerCard.CloseButton.swift in Sources */,
 				FA75D29D24BA374E004F5F9F /* HeroPortraitMask.swift in Sources */,
 				FA62198324F45D4E00491C03 /* MatchComposeView.CompositionChangeButton.swift in Sources */,
 				FA18775F24F258B100496D2E /* TeamFactory.swift in Sources */,
 				FAF3387324C4EB0A007BAA9B /* HeroPickerCard.swift in Sources */,
-				FA9EFA8324F2E63100F46615 /* HeroPickerCard.GroupButton.swift in Sources */,
+				FAE4FBC5252440EA00F94C1A /* PickerOptionButton.swift in Sources */,
 				FA75D2A524BA48A0004F5F9F /* TeamComposingView.swift in Sources */,
 				FA68529B251F404B00E9DECC /* HeroPickerModifier.swift in Sources */,
 				FA75D2A724BA5192004F5F9F /* HeroPortrait.swift in Sources */,
 				FA9EFA7D24F280CC00F46615 /* HeroPickerCell.swift in Sources */,
+				FA5D25AA25212426003406C6 /* XmarkCloseButton.swift in Sources */,
 				FA424CD524FBB039001E5AE2 /* SettingsView.swift in Sources */,
 				FA18775D24F2537800496D2E /* OWHero.TagSet.swift in Sources */,
 				FA75D29F24BA374E004F5F9F /* HeroPickerScroll.swift in Sources */,
 				FAF6D90F2503EDBC006B2530 /* PickableHeroCollection.swift in Sources */,
 				FA75D2A324BA3766004F5F9F /* OWHeroFactory.swift in Sources */,
 				FAAEDB0E2503D04F000A122A /* HeroCollectionFabric.swift in Sources */,
-				FA9EFA8124F2D62D00F46615 /* HeroPickerCard.SortButton.swift in Sources */,
 				FA424CD924FBBBA2001E5AE2 /* MatchComposeView.SettingsButton.swift in Sources */,
 				FA424CD324FB8192001E5AE2 /* MatchComposeView.OptionButton.swift in Sources */,
 				FAAEDB0C2503BF69000A122A /* PickableHero.swift in Sources */,
+				FAE869CE25227D9700B448D7 /* PickerSortButton.swift in Sources */,
 				FAFE8F5524BB5EE800B5ADB2 /* HeroPortraitBackground.swift in Sources */,
+				FA0A33AD252845B000B84993 /* PickerGroupButton.swift in Sources */,
 				FABD7F8124CDED9900B6029A /* TeamSpot.swift in Sources */,
 				FAF3387124C4D230007BAA9B /* MatchSession.swift in Sources */,
 				FA75D26924BA3029004F5F9F /* OWTeamBuilder_2App.swift in Sources */,

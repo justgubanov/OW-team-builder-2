@@ -41,7 +41,7 @@ class HeroCollectionFabric {
     enum GroupCriteria {
         
         case queueRole
-        case tierValue
+        case pickPriority
     }
     
     var matchSession: MatchSession
@@ -54,7 +54,7 @@ class HeroCollectionFabric {
         switch groupingCriteria {
         case .queueRole:
             return makeCollectionsForEachRole(pullHeroes: heroes)
-        case .tierValue:
+        case .pickPriority:
             return makeCollectionsForPickPriority(pullHeroes: heroes)
         }
     }

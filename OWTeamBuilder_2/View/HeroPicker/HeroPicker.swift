@@ -11,7 +11,7 @@ struct HeroPicker: View {
     
     @EnvironmentObject private var session: MatchSession
     
-    var groupCriteria: HeroCollectionFabric.GroupCriteria = .tierValue
+    var groupCriteria: HeroCollectionFabric.GroupCriteria = .pickPriority
     var sortCriteria: PickableHeroCollection.SortCriteria = .name
     
     var body: some View {
