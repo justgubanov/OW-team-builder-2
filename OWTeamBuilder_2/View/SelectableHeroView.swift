@@ -41,13 +41,13 @@ struct SelectableHeroView: View, Identifiable {
     
     private var roleImage: Image {
         switch heroSpot.roleLock {
-        case .any:
+        case .flexible:
             return Image("flex.fill")
-        case .tank:
+        case .locked(role: .tank):
             return Image("tank.fill")
-        case .damage:
+        case .locked(role: .damage):
             return Image("damage.fill")
-        case .support:
+        case .locked(role: .support):
             return Image("support.fill")
         }
     }
@@ -78,7 +78,7 @@ struct SelectableHeroView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             SelectableHeroView(heroSpot: .constant(TeamSpot()))
-            SelectableHeroView(heroSpot: .constant(TeamSpot(hero: nil, roleLock: .damage)))
+            SelectableHeroView(heroSpot: .constant(TeamSpot(hero: nil, roleLock: .locked(role: .damage))))
             SelectableHeroView(heroSpot: .constant(TeamSpot(hero: mei)))
         }
         .previewLayout(.sizeThatFits)

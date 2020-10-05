@@ -15,20 +15,26 @@ struct PickableHeroCollection: Identifiable {
         case compositionValue
     }
     
-    var name: String
-    var icon: Image?
+    enum Alias {
+        
+        case role(OWHero.Role)
+        case preferenceClass(PickPreferenceClass)
+    }
+    
+    var alias: Alias
     var pickableHeroes: [PickableHero]
-    var session: MatchSession
     
     let id = UUID()
     
-    mutating func sort(by sortCriteria: SortCriteria) {
+    mutating func sort(by sortCriteria: SortCriteria, analyser: CompositionAnalyser? = nil) {
         switch sortCriteria {
         case .name:
             pickableHeroes = pickableHeroes.sorted { $0.hero.name < $1.hero.name }
         case .compositionValue:
+            guard let analyser = analyser else {
+                return
+            }
             pickableHeroes = pickableHeroes.sorted { first, second in
-                let analyser = CompositionAnalyser(session: session)
                 let valueOne = analyser.getCompositionValue(of: first.hero)
                 let valueTwo = analyser.getCompositionValue(of: second.hero)
                 return valueOne > valueTwo

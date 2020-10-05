@@ -9,35 +9,6 @@ import Foundation
 
 class HeroCollectionFabric {
     
-    private enum PreferenceClass: CaseIterable {
-        
-        case preferred
-        case situational
-        case others
-        
-        var displayableName: String {
-            switch self {
-            case .preferred:
-                return "Preferred"
-            case .situational:
-                return "Situational"
-            case .others:
-                return "Others"
-            }
-        }
-        
-        var pickPriorityRange: Range<Int> {
-            switch self {
-            case .preferred:
-                return 700..<1000
-            case .situational:
-                return 400..<700
-            case .others:
-                return 0..<400
-            }
-        }
-    }
-    
     enum GroupCriteria {
         
         case queueRole
@@ -60,15 +31,17 @@ class HeroCollectionFabric {
     }
     
     private func makeCollectionsForEachRole(pullHeroes: [OWHero]) -> [PickableHeroCollection] {
-        let roleTags: [OWHero.TagSet] = [.tank, .damage, .support]
+        let classAliases: [PickableHeroCollection.Alias] = [.role(.tank), .role(.damage), .role(.support)]
         
-        return roleTags.compactMap { roleTag in
-            let heroesOfRole = pullHeroes.filter { $0.tags.contains(roleTag) }
+        return classAliases.compactMap { alias in
+            guard case let .role(requiredRole) = alias else {
+                return nil
+            }
+            let heroesOfRole = pullHeroes.filter { hero in
+                hero.role == requiredRole
+            }
             let selectableHeroes = mapToPickable(heroes: heroesOfRole)
-            return PickableHeroCollection(name: roleTag.displayableName,
-                                          icon: roleTag.icon,
-                                          pickableHeroes: selectableHeroes,
-                                          session: matchSession)
+            return PickableHeroCollection(alias: alias, pickableHeroes: selectableHeroes)
         }
     }
     
@@ -77,19 +50,23 @@ class HeroCollectionFabric {
         let heroTierPriority = pullHeroes.map { hero in
             return (hero: hero, tierPriority: analyser.getCompositionValue(of: hero))
         }
+        let preferenceAliases: [PickableHeroCollection.Alias] = [.preferenceClass(.preferred),
+                                                                 .preferenceClass(.situational),
+                                                                 .preferenceClass(.others)]
         
-        return PreferenceClass.allCases.compactMap { preferenceClass in
+        return preferenceAliases.compactMap { alias in
+            guard case let .preferenceClass(preference) = alias else {
+                return nil
+            }
             let heroes = heroTierPriority.filter { _, priorityValue in
-                preferenceClass.pickPriorityRange.contains(priorityValue)
+                return preference.range.contains(priorityValue)
             }.map { $0.hero }
             
             let selectableHeroes = mapToPickable(heroes: heroes)
             guard !selectableHeroes.isEmpty else {
                 return nil
             }
-            return PickableHeroCollection(name: preferenceClass.displayableName,
-                                          pickableHeroes: selectableHeroes,
-                                          session: matchSession)
+            return PickableHeroCollection(alias: alias, pickableHeroes: selectableHeroes)
         }
     }
     

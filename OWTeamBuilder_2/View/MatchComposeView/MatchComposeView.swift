@@ -49,7 +49,7 @@ struct MatchComposeView: View {
             }
             .navigationTitle(Text("Match composer"))
             .navigationBarItems(leading: SettingsButton(showSettings: $showSettings),
-                                trailing: OptionButton())
+                                trailing: SessionOptionsButton())
             
             .heroPicker(isPresented: $showPicker)
             .sheet(isPresented: $showSettings) {
@@ -62,5 +62,6 @@ struct MatchComposeView: View {
 struct MatchComposeView_Previews: PreviewProvider {
     static var previews: some View {
         MatchComposeView()
+            .environmentObject(MatchSession())
     }
 }

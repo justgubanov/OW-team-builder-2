@@ -23,7 +23,7 @@ struct HeroPickerCard: View {
     }
     
     private var isRoleLocked: Bool {
-        return session.focusedSpot?.roleLock != .any
+        return session.focusedSpot?.roleLock != .flexible
     }
     
     var body: some View {
@@ -42,9 +42,10 @@ struct HeroPickerCard: View {
             .padding()
             
             HeroPicker(groupCriteria: groupCriteria, sortCriteria: sortCriteria)
+                .clipped()
             
             Spacer()
-                .frame(height: 20)
+                .frame(height: 40)
         }
         .background(
             Color(.secondarySystemGroupedBackground)

@@ -9,11 +9,18 @@ import UIKit
 
 struct OWHero: Hashable {
     
+    enum Role {
+        
+        case tank
+        case damage
+        case support
+    }
+    
     var portrait: UIImage
     var name: String
     var idString: String
-
-    var tags: TagSet
+    
+    var role: Role
         
     func hash(into hasher: inout Hasher) {
         hasher.combine(idString)

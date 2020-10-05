@@ -15,24 +15,24 @@ struct HeroPicker: View {
     var sortCriteria: PickableHeroCollection.SortCriteria = .name
     
     var body: some View {
-        VStack(spacing: 40) {
+        VStack {
             ForEach(collections) { collection in
-                VStack {
+                ScrollView(.horizontal, showsIndicators: true) {
                     HStack {
-                        collection.icon
-                            .imageScale(.small)
+                        CollectionBadge(collectionAlias: collection.alias)
+                            .padding()
                         
-                        Text(collection.name)
-                            .bold()
-                        Spacer()
+                        HeroPickerRow(availableHeroes: collection.pickableHeroes)
                     }
-                    
-                    HeroPickerScroll(availableHeroes: collection.pickableHeroes)
+                    .padding(2)
+                    .background(
+                        Color(.tertiarySystemGroupedBackground)
+                            .cornerRadius(10)
+                    )
+                    .padding(.horizontal, 16)
                 }
-                .padding(.horizontal, 8)
             }
         }
-        .padding(.vertical, 20)
     }
     
     private var collections: [PickableHeroCollection] {
@@ -40,7 +40,7 @@ struct HeroPicker: View {
         var collections = collectionFabric.makeCollections(from: availableHeroes, groupingCriteria: groupCriteria)
         
         for index in 0..<collections.count {
-            collections[index].sort(by: sortCriteria)
+            collections[index].sort(by: sortCriteria, analyser: session.compositionAnalyser)
         }
         return collections
     }
@@ -48,34 +48,21 @@ struct HeroPicker: View {
     private var availableHeroes: [OWHero] {
         let allHeroes = OWHeroFactory().getHeroes()
         
-        guard let lockedRole = session.focusedSpot?.roleLock else {
+        guard case let .locked(role: lockedRole) = session.focusedSpot?.roleLock else {
             return allHeroes
         }
         let filteredHeroes = allHeroes.filter { hero in
-            hero.isAllowed(by: lockedRole)
+            hero.role == lockedRole
         }
         return filteredHeroes
-    }
-}
-
-fileprivate extension OWHero {
-    
-    func isAllowed(by lock: TeamSpot.RoleLock) -> Bool {
-        switch lock {
-        case .any:
-            return true
-        case .tank:
-            return tags.contains(.tank)
-        case .damage:
-            return tags.contains(.damage)
-        case .support:
-            return tags.contains(.support)
-        }
     }
 }
 
 struct HeroPicker_Previews: PreviewProvider {
     static var previews: some View {
         HeroPicker()
+            .environmentObject(MatchSession())
+            .previewLayout(.sizeThatFits)
+            .preferredColorScheme(.dark)
     }
 }

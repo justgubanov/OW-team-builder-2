@@ -24,6 +24,8 @@ class MatchSession: ObservableObject {
     
     private(set) var composition: OWTeam.Composition = .twoTwoTwo
     
+    private(set) lazy var compositionAnalyser = CompositionAnalyser(session: self)
+    
     init() {
         enemySpots = TeamFactory.makeTeam(with: composition)
         allySpots = TeamFactory.makeTeam(with: composition)

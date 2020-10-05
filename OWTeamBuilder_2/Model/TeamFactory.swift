@@ -28,7 +28,8 @@ class TeamFactory {
     }
     
     private static func makeTwoTwoTwoTeam() -> [TeamSpot] {
-        let roleLocks: [TeamSpot.RoleLock] = [.tank, .tank, .damage, .damage, .support, .support]
+        let roles: [OWHero.Role] = [.tank, .tank,.damage, .damage, .support, .support]
+        let roleLocks: [TeamSpot.RoleLock] = roles.map { TeamSpot.RoleLock.locked(role: $0) }
         var spots: [TeamSpot] = []
         
         for lock in roleLocks {

@@ -9,20 +9,18 @@ import Foundation
 
 class TeamSpot: ObservableObject, Identifiable {
     
-    enum RoleLock {
+    enum RoleLock: Equatable {
         
-        case any
-        case tank
-        case damage
-        case support
+        case flexible
+        case locked(role: OWHero.Role)
     }
     
     @Published var hero: OWHero?
-    @Published var roleLock: RoleLock = .any
+    @Published var roleLock: RoleLock = .flexible
     
     private(set) var id = UUID()
     
-    init(hero: OWHero? = nil, roleLock: RoleLock = .any) {
+    init(hero: OWHero? = nil, roleLock: RoleLock = .flexible) {
         self.hero = hero
     }
 }
