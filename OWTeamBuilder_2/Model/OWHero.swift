@@ -16,11 +16,13 @@ struct OWHero: Hashable {
         case support
     }
     
-    var portrait: UIImage
-    var name: String
-    var idString: String
+    let portrait: UIImage
+    let name: String
     
-    var role: Role
+    let idString: String
+    let number: Int
+    
+    let role: Role
         
     func hash(into hasher: inout Hasher) {
         hasher.combine(idString)

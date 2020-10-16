@@ -37,13 +37,13 @@
 		FA9EFA8524F2EFE200F46615 /* CompositionAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA8424F2EFE200F46615 /* CompositionAnalyser.swift */; };
 		FAAEDB0C2503BF69000A122A /* PickableHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEDB0B2503BF69000A122A /* PickableHero.swift */; };
 		FAAEDB0E2503D04F000A122A /* HeroCollectionFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEDB0D2503D04F000A122A /* HeroCollectionFabric.swift */; };
-		FAAF4FAF25396F4B0004EE82 /* OverAssistant in Frameworks */ = {isa = PBXBuildFile; productRef = FAAF4FAE25396F4B0004EE82 /* OverAssistant */; };
 		FABD7F8124CDED9900B6029A /* TeamSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD7F8024CDED9900B6029A /* TeamSpot.swift */; };
 		FADF0F8F24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF0F8E24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift */; };
 		FAE4FBC5252440EA00F94C1A /* PickerOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4FBC4252440EA00F94C1A /* PickerOptionButton.swift */; };
 		FAE869CE25227D9700B448D7 /* PickerSortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE869CD25227D9700B448D7 /* PickerSortButton.swift */; };
 		FAF3387124C4D230007BAA9B /* MatchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3387024C4D22F007BAA9B /* MatchSession.swift */; };
 		FAF3387324C4EB0A007BAA9B /* HeroPickerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */; };
+		FAF64D582539D01B0034E3BC /* OverAssistant in Frameworks */ = {isa = PBXBuildFile; productRef = FAF64D572539D01B0034E3BC /* OverAssistant */; };
 		FAF6D90F2503EDBC006B2530 /* PickableHeroCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6D90E2503EDBC006B2530 /* PickableHeroCollection.swift */; };
 		FAFE8F5524BB5EE800B5ADB2 /* HeroPortraitBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE8F5424BB5EE800B5ADB2 /* HeroPortraitBackground.swift */; };
 /* End PBXBuildFile section */
@@ -117,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAAF4FAF25396F4B0004EE82 /* OverAssistant in Frameworks */,
+				FAF64D582539D01B0034E3BC /* OverAssistant in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +177,7 @@
 				FA75D27924BA302C004F5F9F /* OWTeamBuilder_2Tests */,
 				FA75D28424BA302C004F5F9F /* OWTeamBuilder_2UITests */,
 				FA75D26624BA3029004F5F9F /* Products */,
+				FAE969EB25397B80000B7C27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -276,6 +277,13 @@
 			path = Extra;
 			sourceTree = "<group>";
 		};
+		FAE969EB25397B80000B7C27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,7 +301,7 @@
 			);
 			name = OWTeamBuilder_2;
 			packageProductDependencies = (
-				FAAF4FAE25396F4B0004EE82 /* OverAssistant */,
+				FAF64D572539D01B0034E3BC /* OverAssistant */,
 			);
 			productName = OWTeamBuilder_2;
 			productReference = FA75D26524BA3029004F5F9F /* OWTeamBuilder_2.app */;
@@ -367,7 +375,7 @@
 			);
 			mainGroup = FA75D25C24BA3028004F5F9F;
 			packageReferences = (
-				FAAF4FAD25396F4B0004EE82 /* XCRemoteSwiftPackageReference "OverAssistant" */,
+				FAF64D562539D01B0034E3BC /* XCRemoteSwiftPackageReference "OverAssistant" */,
 			);
 			productRefGroup = FA75D26624BA3029004F5F9F /* Products */;
 			projectDirPath = "";
@@ -766,20 +774,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FAAF4FAD25396F4B0004EE82 /* XCRemoteSwiftPackageReference "OverAssistant" */ = {
+		FAF64D562539D01B0034E3BC /* XCRemoteSwiftPackageReference "OverAssistant" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/justgubanov/OverAssistant.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = "0.1.4-beta";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FAAF4FAE25396F4B0004EE82 /* OverAssistant */ = {
+		FAF64D572539D01B0034E3BC /* OverAssistant */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FAAF4FAD25396F4B0004EE82 /* XCRemoteSwiftPackageReference "OverAssistant" */;
+			package = FAF64D562539D01B0034E3BC /* XCRemoteSwiftPackageReference "OverAssistant" */;
 			productName = OverAssistant;
 		};
 /* End XCSwiftPackageProductDependency section */
