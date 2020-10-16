@@ -19,12 +19,11 @@ struct OWHero: Hashable {
     let portrait: UIImage
     let name: String
     
-    let idString: String
     let number: Int
     
     let role: Role
         
     func hash(into hasher: inout Hasher) {
-        hasher.combine(idString)
+        hasher.combine(name)
     }
 }

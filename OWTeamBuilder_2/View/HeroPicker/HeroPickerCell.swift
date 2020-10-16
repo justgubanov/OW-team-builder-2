@@ -61,7 +61,7 @@ struct HeroPickerCell: View {
 
 struct HeroPickerCell_Previews: PreviewProvider {
     static var previews: some View {
-        let mei = OWHeroFactory().makeHero(id: "mei")
+        let mei = OWHeroFactory().makeHero(number: 20)
         let session = MatchSession()
         session.setFocusedSpot(to: TeamSpot(hero: mei))
         

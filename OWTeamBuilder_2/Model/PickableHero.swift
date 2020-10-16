@@ -12,7 +12,7 @@ struct PickableHero: Identifiable, Hashable {
     var hero: OWHero
     var isDuplicate: Bool
     
-    var id: String {
-        return hero.idString
+    var id: Int {
+        return hero.number
     }
 }

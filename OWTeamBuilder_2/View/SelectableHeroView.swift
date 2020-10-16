@@ -73,7 +73,7 @@ struct SelectableHeroView: View, Identifiable {
 }
 
 struct SelectableHeroView_Previews: PreviewProvider {
-    static let mei = OWHeroFactory().makeHero(id: "mei")
+    static let mei = OWHeroFactory().makeHero(number: 20)
     
     static var previews: some View {
         Group {
