@@ -43,6 +43,8 @@
 		FAE869CE25227D9700B448D7 /* PickerSortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE869CD25227D9700B448D7 /* PickerSortButton.swift */; };
 		FAF3387124C4D230007BAA9B /* MatchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3387024C4D22F007BAA9B /* MatchSession.swift */; };
 		FAF3387324C4EB0A007BAA9B /* HeroPickerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */; };
+		FAF6204F25445DE000343ADB /* ArrayExtension_ValueSplitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6204E25445DE000343ADB /* ArrayExtension_ValueSplitter.swift */; };
+		FAF6205425445E1E00343ADB /* SequenceExtension_SortedWithKeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6205325445E1E00343ADB /* SequenceExtension_SortedWithKeyPath.swift */; };
 		FAF64D582539D01B0034E3BC /* OverAssistant in Frameworks */ = {isa = PBXBuildFile; productRef = FAF64D572539D01B0034E3BC /* OverAssistant */; };
 		FAF6D90F2503EDBC006B2530 /* PickableHeroCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6D90E2503EDBC006B2530 /* PickableHeroCollection.swift */; };
 		FAFE8F5524BB5EE800B5ADB2 /* HeroPortraitBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE8F5424BB5EE800B5ADB2 /* HeroPortraitBackground.swift */; };
@@ -108,6 +110,8 @@
 		FAE869CD25227D9700B448D7 /* PickerSortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSortButton.swift; sourceTree = "<group>"; };
 		FAF3387024C4D22F007BAA9B /* MatchSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSession.swift; sourceTree = "<group>"; };
 		FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCard.swift; sourceTree = "<group>"; };
+		FAF6204E25445DE000343ADB /* ArrayExtension_ValueSplitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension_ValueSplitter.swift; sourceTree = "<group>"; };
+		FAF6205325445E1E00343ADB /* SequenceExtension_SortedWithKeyPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtension_SortedWithKeyPath.swift; sourceTree = "<group>"; };
 		FAF6D90E2503EDBC006B2530 /* PickableHeroCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickableHeroCollection.swift; sourceTree = "<group>"; };
 		FAFE8F5424BB5EE800B5ADB2 /* HeroPortraitBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPortraitBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -273,6 +277,8 @@
 			children = (
 				FA75D2A224BA3766004F5F9F /* OWHeroFactory.swift */,
 				FADF0F8E24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift */,
+				FAF6204E25445DE000343ADB /* ArrayExtension_ValueSplitter.swift */,
+				FAF6205325445E1E00343ADB /* SequenceExtension_SortedWithKeyPath.swift */,
 			);
 			path = Extra;
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 				FA9EFA7D24F280CC00F46615 /* HeroPickerCell.swift in Sources */,
 				FA5D25AA25212426003406C6 /* XmarkCloseButton.swift in Sources */,
 				FA424CD524FBB039001E5AE2 /* SettingsView.swift in Sources */,
+				FAF6205425445E1E00343ADB /* SequenceExtension_SortedWithKeyPath.swift in Sources */,
 				FA75D29F24BA374E004F5F9F /* HeroPickerRow.swift in Sources */,
 				FAF6D90F2503EDBC006B2530 /* PickableHeroCollection.swift in Sources */,
 				FA75D2A324BA3766004F5F9F /* OWHeroFactory.swift in Sources */,
@@ -448,6 +455,7 @@
 				FAFE8F5524BB5EE800B5ADB2 /* HeroPortraitBackground.swift in Sources */,
 				FA0A33AD252845B000B84993 /* PickerGroupButton.swift in Sources */,
 				FABD7F8124CDED9900B6029A /* TeamSpot.swift in Sources */,
+				FAF6204F25445DE000343ADB /* ArrayExtension_ValueSplitter.swift in Sources */,
 				FAF3387124C4D230007BAA9B /* MatchSession.swift in Sources */,
 				FA75D26924BA3029004F5F9F /* OWTeamBuilder_2App.swift in Sources */,
 				FA424CD124FB7F7E001E5AE2 /* OWTeam.swift in Sources */,

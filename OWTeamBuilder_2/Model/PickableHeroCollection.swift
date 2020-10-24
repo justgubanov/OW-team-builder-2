@@ -24,7 +24,33 @@ struct PickableHeroCollection: Identifiable {
     var alias: Alias
     var pickableHeroes: [PickableHero]
     
-    let id = UUID()
+    var id: Int {
+        switch alias {
+        case .role(.tank):
+            return 0
+        case .role(.damage):
+            return 1
+        case .role(.support):
+            return 2
+    
+        case .preferenceClass(.preferred):
+            return 3
+        case .preferenceClass(.situational):
+            return 4
+        case .preferenceClass(.others):
+            return 5
+        }
+    }
+    
+    init(alias: OWHero.Role, pickableHeroes: [PickableHero]) {
+        self.alias = .role(alias)
+        self.pickableHeroes = pickableHeroes
+    }
+    
+    init(alias: PickPreferenceClass, pickableHeroes: [PickableHero]) {
+        self.alias = .preferenceClass(alias)
+        self.pickableHeroes = pickableHeroes
+    }
     
     mutating func sort(by sortCriteria: SortCriteria, analyser: CompositionAnalyser? = nil) {
         switch sortCriteria {

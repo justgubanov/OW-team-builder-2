@@ -24,58 +24,65 @@ class HeroCollectionFabric {
     func makeCollections(from heroes: [OWHero], groupingCriteria: GroupCriteria) -> [PickableHeroCollection] {
         switch groupingCriteria {
         case .queueRole:
-            return makeCollectionsForEachRole(pullHeroes: heroes)
+            return makeCollectionsForEachRole(heroesPull: heroes)
         case .pickPriority:
-            return makeCollectionsForPickPriority(pullHeroes: heroes)
+            return makeCollectionsForPickPriority(heroesPull: heroes)
         }
     }
     
-    private func makeCollectionsForEachRole(pullHeroes: [OWHero]) -> [PickableHeroCollection] {
-        let classAliases: [PickableHeroCollection.Alias] = [.role(.tank), .role(.damage), .role(.support)]
+    private func makeCollectionsForEachRole(heroesPull: [OWHero]) -> [PickableHeroCollection] {
+        let classAliases = [OWHero.Role.tank, .damage, .support]
         
-        return classAliases.compactMap { alias in
-            guard case let .role(requiredRole) = alias else {
-                return nil
+        return classAliases.map { role in
+            let heroesOfRole = heroesPull.filter { hero in
+                hero.role == role
             }
-            let heroesOfRole = pullHeroes.filter { hero in
-                hero.role == requiredRole
-            }
-            let selectableHeroes = mapToPickable(heroes: heroesOfRole)
-            return PickableHeroCollection(alias: alias, pickableHeroes: selectableHeroes)
+            let selectableHeroes = heroesOfRole.mappedToPickable(in: matchSession)
+            return PickableHeroCollection(alias: role, pickableHeroes: selectableHeroes)
         }
     }
     
-    private func makeCollectionsForPickPriority(pullHeroes: [OWHero]) -> [PickableHeroCollection] {
+    private func makeCollectionsForPickPriority(heroesPull: [OWHero]) -> [PickableHeroCollection] {
         let analyser = CompositionAnalyser(session: matchSession)
-        let heroTierPriority = pullHeroes.map { hero in
-            return (hero: hero, tierPriority: analyser.getCompositionValue(of: hero))
-        }
-        let preferenceAliases: [PickableHeroCollection.Alias] = [.preferenceClass(.preferred),
-                                                                 .preferenceClass(.situational),
-                                                                 .preferenceClass(.others)]
+        let prioritizedHeroes = heroesPull
+            .map { hero in
+                return (hero: hero, tierPriority: analyser.getCompositionValue(of: hero))
+            }
+            .sorted(by: \.tierPriority)
         
-        return preferenceAliases.compactMap { alias in
-            guard case let .preferenceClass(preference) = alias else {
-                return nil
-            }
-            let heroes = heroTierPriority.filter { _, priorityValue in
-                return preference.range.contains(priorityValue)
-            }.map { $0.hero }
-            
-            let selectableHeroes = mapToPickable(heroes: heroes)
-            guard !selectableHeroes.isEmpty else {
-                return nil
-            }
-            return PickableHeroCollection(alias: alias, pickableHeroes: selectableHeroes)
-        }
+        let topThree = prioritizedHeroes.prefix(3).map { $0.hero }
+        let preferredHeroes = topThree.mappedToPickable(in: matchSession)
+        let preferredCollection = PickableHeroCollection(alias: .preferred, pickableHeroes: preferredHeroes)
+        
+        var collections: [PickableHeroCollection] = []
+        collections.append(preferredCollection)
+        
+        let (situationalPicks, otherPicks) = prioritizedHeroes
+            .suffix(from: 3)
+            .map { $0 }
+            .spitted(elementValue: { $0.tierPriority } )
+        
+        let situationalHeroes = situationalPicks
+            .map { $0.hero }
+            .mappedToPickable(in: matchSession)
+        let otherHeroes = otherPicks
+            .map { $0.hero }
+            .mappedToPickable(in: matchSession)
+        
+        collections.append(.init(alias: .situational, pickableHeroes: situationalHeroes))
+        collections.append(.init(alias: .others, pickableHeroes: otherHeroes))
+        return collections
     }
+}
+
+fileprivate extension Array where Element == OWHero {
     
-    private func mapToPickable(heroes: [OWHero]) -> [PickableHero] {
-        return heroes.map { hero in
-            let isEnemySpotSelected = matchSession.focusedSpotType == .some(.enemy)
-            let isAlliedSpotSelected = matchSession.focusedSpotType == .some(.allied)
-            let isAlreadyInEnemyTeam = matchSession.enemySpots.contains { $0.hero == hero }
-            let isAlreadyInAlliedTeam = matchSession.allySpots.contains { $0.hero == hero }
+    func mappedToPickable(in session: MatchSession) -> [PickableHero] {
+        return self.map { hero in
+            let isEnemySpotSelected = session.focusedSpotType == .some(.enemy)
+            let isAlliedSpotSelected = session.focusedSpotType == .some(.allied)
+            let isAlreadyInEnemyTeam = session.enemySpots.contains { $0.hero == hero }
+            let isAlreadyInAlliedTeam = session.allySpots.contains { $0.hero == hero }
             
             if (isEnemySpotSelected && isAlreadyInEnemyTeam) || (isAlliedSpotSelected && isAlreadyInAlliedTeam) {
                 return PickableHero(hero: hero, isDuplicate: false)
