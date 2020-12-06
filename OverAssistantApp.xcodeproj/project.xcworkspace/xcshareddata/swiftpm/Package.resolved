@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "OverAssistant",
+        "repositoryURL": "https://github.com/justgubanov/OverAssistant.git",
+        "state": {
+          "branch": null,
+          "revision": "4615c99f88a7a122988d46da7d26b6e28ca727b9",
+          "version": "0.2.4-beta"
+        }
+      },
+      {
+        "package": "SwiftyJSON",
+        "repositoryURL": "https://github.com/SwiftyJSON/SwiftyJSON.git",
+        "state": {
+          "branch": null,
+          "revision": "2b6054efa051565954e1d2b9da831680026cd768",
+          "version": "5.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

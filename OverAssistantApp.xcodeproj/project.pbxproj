@@ -1,0 +1,805 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA0A33AD252845B000B84993 /* PickerGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A33AC252845B000B84993 /* PickerGroupButton.swift */; };
+		FA18775F24F258B100496D2E /* TeamFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18775E24F258B100496D2E /* TeamFactory.swift */; };
+		FA424CD124FB7F7E001E5AE2 /* OWTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA424CD024FB7F7E001E5AE2 /* OWTeam.swift */; };
+		FA424CD324FB8192001E5AE2 /* SessionOptionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA424CD224FB8192001E5AE2 /* SessionOptionsButton.swift */; };
+		FA424CD524FBB039001E5AE2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA424CD424FBB039001E5AE2 /* SettingsView.swift */; };
+		FA424CD924FBBBA2001E5AE2 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA424CD824FBBBA1001E5AE2 /* SettingsButton.swift */; };
+		FA5AD62B252894A4009C9B33 /* CollectionBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5AD62A252894A3009C9B33 /* CollectionBadge.swift */; };
+		FA5AD650252BA0E3009C9B33 /* PickPreferenceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5AD64F252BA0E3009C9B33 /* PickPreferenceClass.swift */; };
+		FA5D25AA25212426003406C6 /* XmarkCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D25A925212426003406C6 /* XmarkCloseButton.swift */; };
+		FA62198124F45CFF00491C03 /* MatchComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62198024F45CFF00491C03 /* MatchComposeView.swift */; };
+		FA62198324F45D4E00491C03 /* CompositionChangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62198224F45D4E00491C03 /* CompositionChangeButton.swift */; };
+		FA68529B251F404B00E9DECC /* HeroPickerModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68529A251F404B00E9DECC /* HeroPickerModifier.swift */; };
+		FA75D26924BA3029004F5F9F /* OverAssistantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D26824BA3029004F5F9F /* OverAssistantApp.swift */; };
+		FA75D26B24BA3029004F5F9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D26A24BA3029004F5F9F /* ContentView.swift */; };
+		FA75D26D24BA302B004F5F9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA75D26C24BA302B004F5F9F /* Assets.xcassets */; };
+		FA75D27024BA302B004F5F9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA75D26F24BA302B004F5F9F /* Preview Assets.xcassets */; };
+		FA75D27B24BA302C004F5F9F /* OverAssistantAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D27A24BA302C004F5F9F /* OverAssistantAppTests.swift */; platformFilter = ios; };
+		FA75D28624BA302C004F5F9F /* OverAssistantAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D28524BA302C004F5F9F /* OverAssistantAppUITests.swift */; };
+		FA75D29C24BA374E004F5F9F /* HeroPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D29824BA374B004F5F9F /* HeroPicker.swift */; };
+		FA75D29D24BA374E004F5F9F /* HeroPortraitMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D29924BA374C004F5F9F /* HeroPortraitMask.swift */; };
+		FA75D29E24BA374E004F5F9F /* SelectableHeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D29A24BA374D004F5F9F /* SelectableHeroView.swift */; };
+		FA75D29F24BA374E004F5F9F /* HeroPickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D29B24BA374D004F5F9F /* HeroPickerRow.swift */; };
+		FA75D2A124BA375D004F5F9F /* OWHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A024BA375D004F5F9F /* OWHero.swift */; };
+		FA75D2A324BA3766004F5F9F /* OWHeroFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A224BA3766004F5F9F /* OWHeroFactory.swift */; };
+		FA75D2A524BA48A0004F5F9F /* TeamComposingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */; };
+		FA75D2A724BA5192004F5F9F /* HeroPortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75D2A624BA5192004F5F9F /* HeroPortrait.swift */; };
+		FA9EFA7D24F280CC00F46615 /* HeroPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA7C24F280CC00F46615 /* HeroPickerCell.swift */; };
+		FA9EFA8524F2EFE200F46615 /* CompositionAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EFA8424F2EFE200F46615 /* CompositionAnalyser.swift */; };
+		FAAEDB0C2503BF69000A122A /* PickableHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEDB0B2503BF69000A122A /* PickableHero.swift */; };
+		FAAEDB0E2503D04F000A122A /* HeroCollectionFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEDB0D2503D04F000A122A /* HeroCollectionFabric.swift */; };
+		FABD7F8124CDED9900B6029A /* TeamSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD7F8024CDED9900B6029A /* TeamSpot.swift */; };
+		FADF0F8F24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF0F8E24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift */; };
+		FAE4FBC5252440EA00F94C1A /* PickerOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4FBC4252440EA00F94C1A /* PickerOptionButton.swift */; };
+		FAE869CE25227D9700B448D7 /* PickerSortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE869CD25227D9700B448D7 /* PickerSortButton.swift */; };
+		FAF3387124C4D230007BAA9B /* MatchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3387024C4D22F007BAA9B /* MatchSession.swift */; };
+		FAF3387324C4EB0A007BAA9B /* HeroPickerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */; };
+		FAF6204F25445DE000343ADB /* ArrayExtension_ValueSplitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6204E25445DE000343ADB /* ArrayExtension_ValueSplitter.swift */; };
+		FAF6205425445E1E00343ADB /* SequenceExtension_SortedWithKeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6205325445E1E00343ADB /* SequenceExtension_SortedWithKeyPath.swift */; };
+		FAF64D582539D01B0034E3BC /* OverAssistant in Frameworks */ = {isa = PBXBuildFile; productRef = FAF64D572539D01B0034E3BC /* OverAssistant */; };
+		FAF6D90F2503EDBC006B2530 /* PickableHeroCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6D90E2503EDBC006B2530 /* PickableHeroCollection.swift */; };
+		FAFE8F5524BB5EE800B5ADB2 /* HeroPortraitBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE8F5424BB5EE800B5ADB2 /* HeroPortraitBackground.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA75D27724BA302C004F5F9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA75D25D24BA3028004F5F9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA75D26424BA3029004F5F9F;
+			remoteInfo = OWTeamBuilder_2;
+		};
+		FA75D28224BA302C004F5F9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA75D25D24BA3028004F5F9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA75D26424BA3029004F5F9F;
+			remoteInfo = OWTeamBuilder_2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA0A33AC252845B000B84993 /* PickerGroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerGroupButton.swift; sourceTree = "<group>"; };
+		FA18775E24F258B100496D2E /* TeamFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamFactory.swift; sourceTree = "<group>"; };
+		FA424CD024FB7F7E001E5AE2 /* OWTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWTeam.swift; sourceTree = "<group>"; };
+		FA424CD224FB8192001E5AE2 /* SessionOptionsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionOptionsButton.swift; sourceTree = "<group>"; };
+		FA424CD424FBB039001E5AE2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FA424CD824FBBBA1001E5AE2 /* SettingsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
+		FA5AD62A252894A3009C9B33 /* CollectionBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionBadge.swift; sourceTree = "<group>"; };
+		FA5AD64F252BA0E3009C9B33 /* PickPreferenceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickPreferenceClass.swift; sourceTree = "<group>"; };
+		FA5D25A925212426003406C6 /* XmarkCloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmarkCloseButton.swift; sourceTree = "<group>"; };
+		FA62198024F45CFF00491C03 /* MatchComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchComposeView.swift; sourceTree = "<group>"; };
+		FA62198224F45D4E00491C03 /* CompositionChangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionChangeButton.swift; sourceTree = "<group>"; };
+		FA68529A251F404B00E9DECC /* HeroPickerModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerModifier.swift; sourceTree = "<group>"; };
+		FA75D26524BA3029004F5F9F /* OverAssistantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OverAssistantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA75D26824BA3029004F5F9F /* OverAssistantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverAssistantApp.swift; sourceTree = "<group>"; };
+		FA75D26A24BA3029004F5F9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FA75D26C24BA302B004F5F9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA75D26F24BA302B004F5F9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA75D27124BA302B004F5F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA75D27624BA302C004F5F9F /* OverAssistantAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OverAssistantAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA75D27A24BA302C004F5F9F /* OverAssistantAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverAssistantAppTests.swift; sourceTree = "<group>"; };
+		FA75D27C24BA302C004F5F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA75D28124BA302C004F5F9F /* OverAssistantAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OverAssistantAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA75D28524BA302C004F5F9F /* OverAssistantAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverAssistantAppUITests.swift; sourceTree = "<group>"; };
+		FA75D28724BA302C004F5F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA75D29824BA374B004F5F9F /* HeroPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroPicker.swift; sourceTree = "<group>"; };
+		FA75D29924BA374C004F5F9F /* HeroPortraitMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroPortraitMask.swift; sourceTree = "<group>"; };
+		FA75D29A24BA374D004F5F9F /* SelectableHeroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableHeroView.swift; sourceTree = "<group>"; };
+		FA75D29B24BA374D004F5F9F /* HeroPickerRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroPickerRow.swift; sourceTree = "<group>"; };
+		FA75D2A024BA375D004F5F9F /* OWHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWHero.swift; sourceTree = "<group>"; };
+		FA75D2A224BA3766004F5F9F /* OWHeroFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWHeroFactory.swift; sourceTree = "<group>"; };
+		FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamComposingView.swift; sourceTree = "<group>"; };
+		FA75D2A624BA5192004F5F9F /* HeroPortrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPortrait.swift; sourceTree = "<group>"; };
+		FA9EFA7C24F280CC00F46615 /* HeroPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCell.swift; sourceTree = "<group>"; };
+		FA9EFA8424F2EFE200F46615 /* CompositionAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionAnalyser.swift; sourceTree = "<group>"; };
+		FAAEDB0B2503BF69000A122A /* PickableHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickableHero.swift; sourceTree = "<group>"; };
+		FAAEDB0D2503D04F000A122A /* HeroCollectionFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCollectionFabric.swift; sourceTree = "<group>"; };
+		FABD7F8024CDED9900B6029A /* TeamSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSpot.swift; sourceTree = "<group>"; };
+		FADF0F8E24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension_SafeSubscript.swift; sourceTree = "<group>"; };
+		FAE4FBC4252440EA00F94C1A /* PickerOptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerOptionButton.swift; sourceTree = "<group>"; };
+		FAE869CD25227D9700B448D7 /* PickerSortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSortButton.swift; sourceTree = "<group>"; };
+		FAF3387024C4D22F007BAA9B /* MatchSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSession.swift; sourceTree = "<group>"; };
+		FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPickerCard.swift; sourceTree = "<group>"; };
+		FAF6204E25445DE000343ADB /* ArrayExtension_ValueSplitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension_ValueSplitter.swift; sourceTree = "<group>"; };
+		FAF6205325445E1E00343ADB /* SequenceExtension_SortedWithKeyPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtension_SortedWithKeyPath.swift; sourceTree = "<group>"; };
+		FAF6D90E2503EDBC006B2530 /* PickableHeroCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickableHeroCollection.swift; sourceTree = "<group>"; };
+		FAFE8F5424BB5EE800B5ADB2 /* HeroPortraitBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPortraitBackground.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA75D26224BA3029004F5F9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF64D582539D01B0034E3BC /* OverAssistant in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA75D27324BA302C004F5F9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA75D27E24BA302C004F5F9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA18776024F2598500496D2E /* HeroPicker */ = {
+			isa = PBXGroup;
+			children = (
+				FA75D29824BA374B004F5F9F /* HeroPicker.swift */,
+				FA9EFA7C24F280CC00F46615 /* HeroPickerCell.swift */,
+				FA75D29B24BA374D004F5F9F /* HeroPickerRow.swift */,
+				FAF3387224C4EB0A007BAA9B /* HeroPickerCard.swift */,
+				FA5AD62A252894A3009C9B33 /* CollectionBadge.swift */,
+			);
+			path = HeroPicker;
+			sourceTree = "<group>";
+		};
+		FA18776124F25A5100496D2E /* HeroPortrait */ = {
+			isa = PBXGroup;
+			children = (
+				FA75D2A624BA5192004F5F9F /* HeroPortrait.swift */,
+				FA75D29924BA374C004F5F9F /* HeroPortraitMask.swift */,
+				FAFE8F5424BB5EE800B5ADB2 /* HeroPortraitBackground.swift */,
+			);
+			path = HeroPortrait;
+			sourceTree = "<group>";
+		};
+		FA62198424F46A4400491C03 /* MatchComposeView */ = {
+			isa = PBXGroup;
+			children = (
+				FA62198024F45CFF00491C03 /* MatchComposeView.swift */,
+				FA62198224F45D4E00491C03 /* CompositionChangeButton.swift */,
+				FA424CD224FB8192001E5AE2 /* SessionOptionsButton.swift */,
+			);
+			path = MatchComposeView;
+			sourceTree = "<group>";
+		};
+		FA75D25C24BA3028004F5F9F = {
+			isa = PBXGroup;
+			children = (
+				FA75D26724BA3029004F5F9F /* OverAssistantApp */,
+				FA75D27924BA302C004F5F9F /* OverAssistantAppTests */,
+				FA75D28424BA302C004F5F9F /* OverAssistantAppUITests */,
+				FA75D26624BA3029004F5F9F /* Products */,
+				FAE969EB25397B80000B7C27 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FA75D26624BA3029004F5F9F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA75D26524BA3029004F5F9F /* OverAssistantApp.app */,
+				FA75D27624BA302C004F5F9F /* OverAssistantAppTests.xctest */,
+				FA75D28124BA302C004F5F9F /* OverAssistantAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA75D26724BA3029004F5F9F /* OverAssistantApp */ = {
+			isa = PBXGroup;
+			children = (
+				FA75D26824BA3029004F5F9F /* OverAssistantApp.swift */,
+				FA75D26A24BA3029004F5F9F /* ContentView.swift */,
+				FA75D29424BA3693004F5F9F /* Model */,
+				FA75D29324BA3689004F5F9F /* View */,
+				FA75D29524BA36DB004F5F9F /* Extra */,
+				FA75D26C24BA302B004F5F9F /* Assets.xcassets */,
+				FA75D27124BA302B004F5F9F /* Info.plist */,
+				FA75D26E24BA302B004F5F9F /* Preview Content */,
+			);
+			path = OverAssistantApp;
+			sourceTree = "<group>";
+		};
+		FA75D26E24BA302B004F5F9F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FA75D26F24BA302B004F5F9F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA75D27924BA302C004F5F9F /* OverAssistantAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA75D27A24BA302C004F5F9F /* OverAssistantAppTests.swift */,
+				FA75D27C24BA302C004F5F9F /* Info.plist */,
+			);
+			path = OverAssistantAppTests;
+			sourceTree = "<group>";
+		};
+		FA75D28424BA302C004F5F9F /* OverAssistantAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FA75D28524BA302C004F5F9F /* OverAssistantAppUITests.swift */,
+				FA75D28724BA302C004F5F9F /* Info.plist */,
+			);
+			path = OverAssistantAppUITests;
+			sourceTree = "<group>";
+		};
+		FA75D29324BA3689004F5F9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA424CD424FBB039001E5AE2 /* SettingsView.swift */,
+				FA75D2A424BA48A0004F5F9F /* TeamComposingView.swift */,
+				FA75D29A24BA374D004F5F9F /* SelectableHeroView.swift */,
+				FA62198424F46A4400491C03 /* MatchComposeView */,
+				FA18776024F2598500496D2E /* HeroPicker */,
+				FA18776124F25A5100496D2E /* HeroPortrait */,
+				FA68529A251F404B00E9DECC /* HeroPickerModifier.swift */,
+				FA424CD824FBBBA1001E5AE2 /* SettingsButton.swift */,
+				FA5D25A925212426003406C6 /* XmarkCloseButton.swift */,
+				FAE869CD25227D9700B448D7 /* PickerSortButton.swift */,
+				FA0A33AC252845B000B84993 /* PickerGroupButton.swift */,
+				FAE4FBC4252440EA00F94C1A /* PickerOptionButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA75D29424BA3693004F5F9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3387024C4D22F007BAA9B /* MatchSession.swift */,
+				FA424CD024FB7F7E001E5AE2 /* OWTeam.swift */,
+				FABD7F8024CDED9900B6029A /* TeamSpot.swift */,
+				FA18775E24F258B100496D2E /* TeamFactory.swift */,
+				FA9EFA8424F2EFE200F46615 /* CompositionAnalyser.swift */,
+				FAAEDB0B2503BF69000A122A /* PickableHero.swift */,
+				FAF6D90E2503EDBC006B2530 /* PickableHeroCollection.swift */,
+				FA5AD64F252BA0E3009C9B33 /* PickPreferenceClass.swift */,
+				FAAEDB0D2503D04F000A122A /* HeroCollectionFabric.swift */,
+				FA75D2A024BA375D004F5F9F /* OWHero.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA75D29524BA36DB004F5F9F /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				FA75D2A224BA3766004F5F9F /* OWHeroFactory.swift */,
+				FADF0F8E24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift */,
+				FAF6204E25445DE000343ADB /* ArrayExtension_ValueSplitter.swift */,
+				FAF6205325445E1E00343ADB /* SequenceExtension_SortedWithKeyPath.swift */,
+			);
+			path = Extra;
+			sourceTree = "<group>";
+		};
+		FAE969EB25397B80000B7C27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA75D26424BA3029004F5F9F /* OverAssistantApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA75D28A24BA302C004F5F9F /* Build configuration list for PBXNativeTarget "OverAssistantApp" */;
+			buildPhases = (
+				FA75D26124BA3029004F5F9F /* Sources */,
+				FA75D26224BA3029004F5F9F /* Frameworks */,
+				FA75D26324BA3029004F5F9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OverAssistantApp;
+			packageProductDependencies = (
+				FAF64D572539D01B0034E3BC /* OverAssistant */,
+			);
+			productName = OWTeamBuilder_2;
+			productReference = FA75D26524BA3029004F5F9F /* OverAssistantApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA75D27524BA302C004F5F9F /* OverAssistantAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA75D28D24BA302C004F5F9F /* Build configuration list for PBXNativeTarget "OverAssistantAppTests" */;
+			buildPhases = (
+				FA75D27224BA302C004F5F9F /* Sources */,
+				FA75D27324BA302C004F5F9F /* Frameworks */,
+				FA75D27424BA302C004F5F9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA75D27824BA302C004F5F9F /* PBXTargetDependency */,
+			);
+			name = OverAssistantAppTests;
+			productName = OWTeamBuilder_2Tests;
+			productReference = FA75D27624BA302C004F5F9F /* OverAssistantAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA75D28024BA302C004F5F9F /* OverAssistantAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA75D29024BA302C004F5F9F /* Build configuration list for PBXNativeTarget "OverAssistantAppUITests" */;
+			buildPhases = (
+				FA75D27D24BA302C004F5F9F /* Sources */,
+				FA75D27E24BA302C004F5F9F /* Frameworks */,
+				FA75D27F24BA302C004F5F9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA75D28324BA302C004F5F9F /* PBXTargetDependency */,
+			);
+			name = OverAssistantAppUITests;
+			productName = OWTeamBuilder_2UITests;
+			productReference = FA75D28124BA302C004F5F9F /* OverAssistantAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA75D25D24BA3028004F5F9F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					FA75D26424BA3029004F5F9F = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					FA75D27524BA302C004F5F9F = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = FA75D26424BA3029004F5F9F;
+					};
+					FA75D28024BA302C004F5F9F = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = FA75D26424BA3029004F5F9F;
+					};
+				};
+			};
+			buildConfigurationList = FA75D26024BA3028004F5F9F /* Build configuration list for PBXProject "OverAssistantApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA75D25C24BA3028004F5F9F;
+			packageReferences = (
+				FAF64D562539D01B0034E3BC /* XCRemoteSwiftPackageReference "OverAssistant" */,
+			);
+			productRefGroup = FA75D26624BA3029004F5F9F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA75D26424BA3029004F5F9F /* OverAssistantApp */,
+				FA75D27524BA302C004F5F9F /* OverAssistantAppTests */,
+				FA75D28024BA302C004F5F9F /* OverAssistantAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA75D26324BA3029004F5F9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA75D27024BA302B004F5F9F /* Preview Assets.xcassets in Resources */,
+				FA75D26D24BA302B004F5F9F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA75D27424BA302C004F5F9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA75D27F24BA302C004F5F9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA75D26124BA3029004F5F9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA9EFA8524F2EFE200F46615 /* CompositionAnalyser.swift in Sources */,
+				FA75D26B24BA3029004F5F9F /* ContentView.swift in Sources */,
+				FADF0F8F24E1F17500A2B104 /* ArrayExtension_SafeSubscript.swift in Sources */,
+				FA75D29E24BA374E004F5F9F /* SelectableHeroView.swift in Sources */,
+				FA75D2A124BA375D004F5F9F /* OWHero.swift in Sources */,
+				FA75D29D24BA374E004F5F9F /* HeroPortraitMask.swift in Sources */,
+				FA62198324F45D4E00491C03 /* CompositionChangeButton.swift in Sources */,
+				FA18775F24F258B100496D2E /* TeamFactory.swift in Sources */,
+				FAF3387324C4EB0A007BAA9B /* HeroPickerCard.swift in Sources */,
+				FA5AD62B252894A4009C9B33 /* CollectionBadge.swift in Sources */,
+				FAE4FBC5252440EA00F94C1A /* PickerOptionButton.swift in Sources */,
+				FA75D2A524BA48A0004F5F9F /* TeamComposingView.swift in Sources */,
+				FA68529B251F404B00E9DECC /* HeroPickerModifier.swift in Sources */,
+				FA75D2A724BA5192004F5F9F /* HeroPortrait.swift in Sources */,
+				FA9EFA7D24F280CC00F46615 /* HeroPickerCell.swift in Sources */,
+				FA5D25AA25212426003406C6 /* XmarkCloseButton.swift in Sources */,
+				FA424CD524FBB039001E5AE2 /* SettingsView.swift in Sources */,
+				FAF6205425445E1E00343ADB /* SequenceExtension_SortedWithKeyPath.swift in Sources */,
+				FA75D29F24BA374E004F5F9F /* HeroPickerRow.swift in Sources */,
+				FAF6D90F2503EDBC006B2530 /* PickableHeroCollection.swift in Sources */,
+				FA75D2A324BA3766004F5F9F /* OWHeroFactory.swift in Sources */,
+				FA5AD650252BA0E3009C9B33 /* PickPreferenceClass.swift in Sources */,
+				FAAEDB0E2503D04F000A122A /* HeroCollectionFabric.swift in Sources */,
+				FA424CD924FBBBA2001E5AE2 /* SettingsButton.swift in Sources */,
+				FA424CD324FB8192001E5AE2 /* SessionOptionsButton.swift in Sources */,
+				FAAEDB0C2503BF69000A122A /* PickableHero.swift in Sources */,
+				FAE869CE25227D9700B448D7 /* PickerSortButton.swift in Sources */,
+				FAFE8F5524BB5EE800B5ADB2 /* HeroPortraitBackground.swift in Sources */,
+				FA0A33AD252845B000B84993 /* PickerGroupButton.swift in Sources */,
+				FABD7F8124CDED9900B6029A /* TeamSpot.swift in Sources */,
+				FAF6204F25445DE000343ADB /* ArrayExtension_ValueSplitter.swift in Sources */,
+				FAF3387124C4D230007BAA9B /* MatchSession.swift in Sources */,
+				FA75D26924BA3029004F5F9F /* OverAssistantApp.swift in Sources */,
+				FA424CD124FB7F7E001E5AE2 /* OWTeam.swift in Sources */,
+				FA62198124F45CFF00491C03 /* MatchComposeView.swift in Sources */,
+				FA75D29C24BA374E004F5F9F /* HeroPicker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA75D27224BA302C004F5F9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA75D27B24BA302C004F5F9F /* OverAssistantAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA75D27D24BA302C004F5F9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA75D28624BA302C004F5F9F /* OverAssistantAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA75D27824BA302C004F5F9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = FA75D26424BA3029004F5F9F /* OverAssistantApp */;
+			targetProxy = FA75D27724BA302C004F5F9F /* PBXContainerItemProxy */;
+		};
+		FA75D28324BA302C004F5F9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA75D26424BA3029004F5F9F /* OverAssistantApp */;
+			targetProxy = FA75D28224BA302C004F5F9F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FA75D28824BA302C004F5F9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA75D28924BA302C004F5F9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA75D28B24BA302C004F5F9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"OverAssistantApp/Preview Content\"";
+				DEVELOPMENT_TEAM = DDQSASC66F;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = OverAssistantApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "justgubanov.overassistant-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA75D28C24BA302C004F5F9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"OverAssistantApp/Preview Content\"";
+				DEVELOPMENT_TEAM = DDQSASC66F;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = OverAssistantApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "justgubanov.overassistant-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FA75D28E24BA302C004F5F9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DDQSASC66F;
+				INFOPLIST_FILE = OWTeamBuilder_2Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.stanford.cs193p.agubanov.OWTeamBuilder-2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OverAssistantApp.app/OverAssistantApp";
+			};
+			name = Debug;
+		};
+		FA75D28F24BA302C004F5F9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DDQSASC66F;
+				INFOPLIST_FILE = OWTeamBuilder_2Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.stanford.cs193p.agubanov.OWTeamBuilder-2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OverAssistantApp.app/OverAssistantApp";
+			};
+			name = Release;
+		};
+		FA75D29124BA302C004F5F9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DDQSASC66F;
+				INFOPLIST_FILE = OverAssistantAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.stanford.cs193p.agubanov.OWTeamBuilder-2UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OWTeamBuilder_2;
+			};
+			name = Debug;
+		};
+		FA75D29224BA302C004F5F9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DDQSASC66F;
+				INFOPLIST_FILE = OverAssistantAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.stanford.cs193p.agubanov.OWTeamBuilder-2UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OWTeamBuilder_2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA75D26024BA3028004F5F9F /* Build configuration list for PBXProject "OverAssistantApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA75D28824BA302C004F5F9F /* Debug */,
+				FA75D28924BA302C004F5F9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA75D28A24BA302C004F5F9F /* Build configuration list for PBXNativeTarget "OverAssistantApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA75D28B24BA302C004F5F9F /* Debug */,
+				FA75D28C24BA302C004F5F9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA75D28D24BA302C004F5F9F /* Build configuration list for PBXNativeTarget "OverAssistantAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA75D28E24BA302C004F5F9F /* Debug */,
+				FA75D28F24BA302C004F5F9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA75D29024BA302C004F5F9F /* Build configuration list for PBXNativeTarget "OverAssistantAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA75D29124BA302C004F5F9F /* Debug */,
+				FA75D29224BA302C004F5F9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAF64D562539D01B0034E3BC /* XCRemoteSwiftPackageReference "OverAssistant" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/justgubanov/OverAssistant.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = "0.1.4-beta";
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAF64D572539D01B0034E3BC /* OverAssistant */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAF64D562539D01B0034E3BC /* XCRemoteSwiftPackageReference "OverAssistant" */;
+			productName = OverAssistant;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FA75D25D24BA3028004F5F9F /* Project object */;
+}
